@@ -8,12 +8,69 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
   </head>
   <body>
-    <h1>Eloise</h1>
-    <div>
-      Click
-      <a href="bananas/index.html">here</a> to see my first ever completed
-      coding project!
-    </div>
+    <nav class="navbar navbar-expand-md bg-info">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><h1>Eloise Salmon</h1></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+            <a class="nav-link" href="About/index.html">About</a>
+            <a class="nav-link" href="bananas/index.html">Banana Quiz</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col">
+            <h2 class="display-2">Wecome to my website!</h2>
+            <p class="lead">
+              It's currently a work-in-progress, but you can already check out
+              my first ever coding project, completed in April 2022 as my final
+              project for the SheCodes Introduction to coding course. It's
+              pretty messy but we all have to start somewhere!
+            </p>
+          </div>
+          <div>
+            <div
+              class="card text-bg-light col-10 col-lg-8 col-xl-6 align-self-center mx-auto"
+            >
+              <a href="bananas/index.html"
+                ><img
+                  src="images/Bananas-screenshot.png"
+                  class="card-img"
+                  alt="banana quiz screenshot"
+              /></a>
+              <div class="card-body">
+                <h5 class="card-title">Banana Quiz</h5>
+                <p class="card-text">
+                  Information page and interactive quiz, using HTML, CSS and
+                  JavaScript.
+                </p>
+                <p class="card-text">
+                  <small>Project finished on 18th April 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="bootstrap/js/bootstrap.bundle.js"></script>
   </body>
 </html>

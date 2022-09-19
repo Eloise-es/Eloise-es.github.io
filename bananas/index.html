@@ -5,149 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Week 3 Project</title>
-    <style>
-      body {
-        background: url("https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg");
-        background-attachment: fixed;
-        border-radius: 10px;
-        width: 70%;
-        padding: 30px;
-        margin: 20px auto;
-        font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
-      }
-
-      h1 {
-        background: cornsilk;
-        text-align: center;
-        line-height: 70px;
-        border-radius: 20px;
-        font-weight: 100;
-        font-size: 60px;
-      }
-
-      h2 {
-        background: cornsilk;
-        text-align: center;
-        padding: 20px 5px;
-        border-radius: 20px;
-        font-weight: 200;
-      }
-
-      p {
-        background: cornsilk;
-        padding: 20px;
-        border-radius: 20px;
-        line-height: 1.5;
-      }
-
-      img {
-        display: block;
-        margin: 0 auto;
-        padding: 10px;
-        max-width: 80%;
-        border-radius: 20px;
-      }
-
-      button {
-        display: block;
-        margin: 0 auto;
-        font-size: 48px;
-        width: 100%;
-        border-radius: 20px;
-        padding: 20px;
-        background: cornsilk;
-        box-shadow: 5px 10px 20px black;
-      }
-
-      footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        padding: 5px;
-        text-align: center;
-        color: cornsilk;
-        background: linear-gradient(0.25turn, gray, black);
-      }
-      .learn-more {
-        display: block;
-        margin-bottom: 10px;
-        text-align: center;
-        text-decoration: none;
-      }
-      .learn-more:hover {
-        text-decoration: underline;
-      }
-      .my-website {
-        text-decoration: none;
-        color: cornflowerblue;
-      }
-      .my-website:hover {
-        text-decoration: underline;
-      }
-      button:hover {
-        background: black;
-        color: cornsilk;
-        cursor: pointer;
-        transition: 0.5s;
-      }
-      .quizButton {
-        display: none;
-      }
-      .showButton {
-        font-size: 20px;
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
   </head>
   <body>
-    <h1>Bananas</h1>
-    <h2>
-      Read the information and then take the quiz to see what you remember!
-    </h2>
-    <div class="content">
-      <p>
-        A banana is an elongated, edible fruit - botanically a
-        <strong>berry</strong> - produced by several kinds of large herbaceous
-        flowering plants in the genus Musa. In some countries, bananas used for
-        cooking may be called "plantains", distinguishing them from dessert
-        bananas.<br />
-        <img
-          src="https://gardenerspath.com/wp-content/uploads/2019/12/Banana-Plant-with-Ripe-Fruit.jpg"
-          alt="Banana plant"
-        /><br />
-
-        <a
-          href="https://en.wikipedia.org/wiki/Banana"
-          target="_blank"
-          class="learn-more"
-          >Read more on Wikipedia</a
+    <nav class="navbar navbar-expand-lg bg-info">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><h1>Eloise Salmon</h1></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-      </p>
-      <p>
-        As you can see, the vast majority of European countries use a variation
-        of the <em>Wolof</em> word to say 'banana'.
-        <span>
-          <a href="https://i.redd.it/oys2d16ca7vz.jpg" target="_blank">
-            <img
-              src="https://i.redd.it/oys2d16ca7vz.jpg"
-              alt="Banana in different European languages"
-            />
-          </a>
-          Click on the above image to open an enlarged version in a new tab.
-        </span>
-      </p>
-    </div>
-    <button class="hideButton">I'm ready, hide the answers!</button>
-    <button class="quizButton">Take the quiz!</button>
-    <button class="showButton">Show the information again</button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="../about/index.html">About</a>
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Banana Quiz</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <h1>Bananas</h1>
+      <h2>
+        Read the information and then take the quiz to see what you remember!
+      </h2>
+      <div class="content">
+        <p>
+          A banana is an elongated, edible fruit - botanically a
+          <strong>berry</strong> - produced by several kinds of large herbaceous
+          flowering plants in the genus Musa. In some countries, bananas used
+          for cooking may be called "plantains", distinguishing them from
+          dessert bananas.<br />
+          <img
+            src="https://gardenerspath.com/wp-content/uploads/2019/12/Banana-Plant-with-Ripe-Fruit.jpg"
+            alt="Banana plant"
+          /><br />
 
-    <footer>
-      This page was coded by
-      <a href="http://eloise.es" target="_blank" class="my-website"
-        >Eloise Salmon</a
-      >
-    </footer>
+          <a
+            href="https://en.wikipedia.org/wiki/Banana"
+            target="_blank"
+            class="learn-more"
+            >Read more on Wikipedia</a
+          >
+        </p>
+        <p>
+          As you can see, the vast majority of European countries use a
+          variation of the <em>Wolof</em> word to say 'banana'.
+          <span>
+            <a href="https://i.redd.it/oys2d16ca7vz.jpg" target="_blank">
+              <img
+                src="https://i.redd.it/oys2d16ca7vz.jpg"
+                alt="Banana in different European languages"
+              />
+            </a>
+            Click on the above image to open an enlarged version in a new tab.
+          </span>
+        </p>
+      </div>
+      <button class="hideButton">I'm ready, hide the answers!</button>
+      <button class="quizButton">Take the quiz!</button>
+      <button class="showButton">Show the information again</button>
+
+      <footer>
+        This page was coded by
+        <a href="http://eloise.es" target="_blank" class="my-website"
+          >Eloise Salmon</a
+        >
+      </footer>
+    </section>
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
     <script>
       let score = 0;
       // To edit h2 within JavaScript code

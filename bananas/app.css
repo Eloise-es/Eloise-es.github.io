@@ -1,0 +1,95 @@
+body {
+  background: url("https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg");
+  background-attachment: fixed;
+}
+section {
+  border-radius: 10px;
+  width: 70%;
+  padding: 30px;
+  margin: 20px auto;
+  font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
+}
+
+section h1 {
+  background: cornsilk;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 20px;
+  font-weight: 100;
+  font-size: 60px;
+}
+
+section h2 {
+  background: cornsilk;
+  text-align: center;
+  padding: 20px 5px;
+  border-radius: 20px;
+  font-weight: 200;
+}
+
+section p {
+  background: cornsilk;
+  padding: 20px;
+  border-radius: 20px;
+  line-height: 1.5;
+}
+
+section img {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 80%;
+  border-radius: 20px;
+}
+
+section button {
+  display: block;
+  margin: 0 auto;
+  font-size: 48px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  background: cornsilk;
+  box-shadow: 5px 10px 20px black;
+}
+
+section footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  color: cornsilk;
+  background: linear-gradient(0.25turn, gray, black);
+}
+
+.learn-more {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+.learn-more:hover {
+  text-decoration: underline;
+}
+.my-website {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+.my-website:hover {
+  text-decoration: underline;
+}
+button:hover {
+  background: black;
+  color: cornsilk;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.quizButton {
+  display: none;
+}
+.showButton {
+  font-size: 20px;
+  display: none;
+}
