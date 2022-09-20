@@ -80,7 +80,7 @@ section footer {
 .my-website:hover {
   text-decoration: underline;
 }
-button:hover {
+section button:hover {
   background: black;
   color: cornsilk;
   cursor: pointer;
