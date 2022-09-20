@@ -6,3 +6,11 @@ nav {
 body {
   background-color: #e0eff0;
 }
+.about {
+  background-color: #3d4e7d;
+  color: #e0eff0;
+}
+a {
+  text-decoration: none;
+  color: cornflowerblue;
+}
