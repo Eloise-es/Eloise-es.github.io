@@ -7,6 +7,7 @@
     <title>Eloise Salmon</title>
     <link rel="stylesheet" href="CSS/bootstrap.css" />
     <link rel="stylesheet" href="CSS/eloise.css" />
+    <link rel="stylesheet" href="CSS/bootstrap-icons.css" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -26,7 +27,8 @@
     />
     <link rel="manifest" href="images/favicon/site.webmanifest" />
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Nav bar -->
     <nav class="navbar navbar-expand-md sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html"><h1>Eloise Salmon</h1></a>
@@ -52,7 +54,8 @@
         </div>
       </div>
     </nav>
-    <section>
+    <!-- Nav bar -->
+    <section class="justify-content-center col-lg-9 col-xl-8 mx-auto">
       <div class="container-fluid">
         <h2 class="display-2 text-center mt-3">Welcome to my website!</h2>
         <div class="row flex-md-nowrap d-flex justify-content-center">
@@ -96,6 +99,60 @@
       </div>
     </section>
 
+    <footer class="bg-light text-center text-white mt-auto">
+      <!-- Grid container -->
+      <div class="container p-3 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-3">
+          <!-- Linkedin -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #0082ca"
+            href="https://www.linkedin.com/in/eloisesalmon/"
+            target="_blank"
+            role="button"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <!-- Github -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #333333"
+            href="https://github.com/Eloise-es"
+            target="_blank"
+            role="button"
+            ><i class="bi bi-github"></i
+          ></a>
+          <!-- Twitter -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #55acee"
+            href="https://twitter.com/Eloise__ES"
+            target="_blank"
+            role="button"
+            ><i class="bi bi-twitter"></i
+          ></a>
+
+          <!-- Unsplash -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: gray"
+            href="https://unsplash.com/@eloise_es"
+            target="_blank"
+            role="button"
+            ><i class="bi bi-camera-fill"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://www.eloise.es/">Eloise Salmon</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
     <script src="bootstrap/js/bootstrap.bundle.js"></script>
   </body>
 </html>
