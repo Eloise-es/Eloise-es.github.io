@@ -10,6 +10,9 @@ body {
   background-color: #3d4e7d;
   color: #e0eff0;
 }
+.about h1 {
+  color: white;
+}
 a {
   text-decoration: none;
   color: cornflowerblue;

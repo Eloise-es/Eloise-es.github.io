@@ -37,13 +37,19 @@
     <section>
       <div class="container-fluid">
         <div class="row m-3">
+            <div class="about p-3 mb-3 d-block d-md-none">
+                  <h1 class="display-4 text-center">About me</h1>
+                  <p class="lead">I'm Eloise, I used to be a languages teacher but now I'm learning to code. Click below to see summaries of what I've been up to over the last decade.</p></div>
+                  
               <div class="col-5">
+                <div class="row">
                 <img
                   class="img-fluid m-0"
-                  src="../images/me.jpeg"
+                  src="../images/me-smaller.jpeg"
                   alt="Photo of Eloise"
-               />
-                <div class="list-group mt-3" id="list-tab" role="tablist">
+               /></div>
+               <div class="row d-lg-none m-0 mt-3">
+                <div class="list-group p-0" id="list-tab" role="tablist">
                   <a
                     class="list-group-item list-group-item-action active"
                     id="list-first-list"
@@ -82,26 +88,69 @@
                   >
                 </div>
               </div>
-              <div class="col-7">
-                <div class="about p-3 mb-3">
-                  <h1 class="display-3 text-center">About me</h1>
+              </div>
+              <div class="col-7 align-items-center">
+              <div class="row about p-3 mb-3 d-none d-md-block">
+                  <h1 class="display-4 text-center">About me</h1>
                   <p class="lead">I'm Eloise, I used to be a languages teacher but now I'm learning to code. Click below to see summaries of what I've been up to over the last decade.</p></div>
-                  <div class="tab-content bg-light text-bg-light p-2 mb-3" id="nav-tabContent">
-                  <div
-                    class="tab-pane fade show active"
-                    id="list-first"
-                    role="tabpanel"
-                    aria-labelledby="list-first-list"
-                  > 
-                    <h3>Web Developer Bootcamp</h3>
-                    <h6>2022-present, Den Haag</h6>
-                    <p>I moved to the Netherlands in the summer and started 
-                      <a
-                        href="https://www.udemy.com/course/the-web-developer-bootcamp/"
-                        target="_blank"
-                      >Colt Steele's Web Developer Bootcamp course</a>
-                      on 1st September 2022. So far I have learned HTML, CSS and basic JavaScript and have built this website with Bootstrap. I expect to finish the course in November 2022 and from there I will decide what to do next!</p>
-                  </div>
+                <div class="row mt-md-auto bg-light">
+                    <div class="col-4 d-none d-lg-block">
+                    <div class="list-group mt-3" id="list-tab" role="tablist">
+                  <a
+                    class="list-group-item list-group-item-action active"
+                    id="list-first-list"
+                    data-bs-toggle="list"
+                    href="#list-first"
+                    role="tab"
+                    aria-controls="list-first"
+                    >2022 - present</a
+                  >
+                  <a
+                    class="list-group-item list-group-item-action"
+                    id="list-second-list"
+                    data-bs-toggle="list"
+                    href="#list-second"
+                    role="tab"
+                    aria-controls="list-second"
+                    >2019 - 2022</a
+                  >
+                  <a
+                    class="list-group-item list-group-item-action"
+                    id="list-third-list"
+                    data-bs-toggle="list"
+                    href="#list-third"
+                    role="tab"
+                    aria-controls="list-third"
+                    >2017 - 2019</a
+                  >
+                  <a
+                    class="list-group-item list-group-item-action"
+                    id="list-fourth-list"
+                    data-bs-toggle="list"
+                    href="#list-fourth"
+                    role="tab"
+                    aria-controls="list-fourth"
+                    >2013 - 2017</a
+                  >
+                </div>
+                    </div>
+                    <div class="col">
+                    <div class="tab-content bg-light text-bg-light p-2" id="nav-tabContent">
+                         <div
+                        class="tab-pane fade show active"
+                        id="list-first"
+                        role="tabpanel"
+                        aria-labelledby="list-first-list"
+                        > 
+                            <h3>Web Developer Bootcamp</h3>
+                            <h6>2022-present, Den Haag</h6>
+                            <p>I moved to the Netherlands in the summer and started 
+                            <a
+                                href="https://www.udemy.com/course/the-web-developer-bootcamp/"
+                                target="_blank"
+                             >Colt Steele's Web Developer Bootcamp course</a>
+                             on 1st September 2022. So far I have learned HTML, CSS and basic JavaScript and have built this website with Bootstrap. I expect to finish the course in November 2022 and start looking for a job as a junior developer.</p>
+                        </div>
                   <div
                     class="tab-pane fade"
                     id="list-second"
@@ -131,27 +180,14 @@
                     <h3>BA Hons French and Linguistics</h3>
                     <h6>2013-2017, University of Leeds</h6>
                     <p>My course suited me well because it was scientific as well as creative. I loved learning about how languages work, and was lucky enough to have really passionate professors teaching me. As part of the French course, I spent a year teaching English in Normandy, France, which was an amazing first experience living abroad and made me excited to explore more of the world.</p>
-                  </div>
+                  </div></div>
+                </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="container-fluid">
-        <div class="row m-3 flex-md-row-reverse">
-          <div class="col-12 about col-md-4 mb-3 mb-md-0 p-3">
-            <h2>About me</h2>
-          </div>
-          <div class="col-12 col-md-8 p-0 pe-md-3">
-            <img
-              class="img-fluid m-0"
-              src="../images/me.jpeg"
-              alt="Photo of Eloise"
-            />
-          </div>
-        </div>
-      </div> -->
     </section>
     <script src="../bootstrap/js/bootstrap.bundle.js"></script>
   </body>
