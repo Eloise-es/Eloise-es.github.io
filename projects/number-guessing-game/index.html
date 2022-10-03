@@ -2,34 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eloise Salmon</title>
-    <link rel="stylesheet" href="../CSS/bootstrap.css" />
-    <link rel="stylesheet" href="../CSS/eloise.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Week 3 Project</title>
+    <link rel="stylesheet" href="../../CSS/bootstrap.css" />
+    <link rel="stylesheet" href="../../CSS/eloise.css" />
     <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="../CSS/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../CSS/bootstrap-icons.css" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="images/favicon/apple-touch-icon.png"
+      href="../images/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="images/favicon/favicon-32x32.png"
+      href="../images/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="images/favicon/favicon-16x16.png"
+      href="../images/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <!-- Nav bar -->
+    <!-- Navbar START -->
     <nav class="navbar navbar-expand-md sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="../index.html"><h1>Eloise Salmon</h1></a>
@@ -46,13 +46,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <div class="navbar-nav">
-            <a class="nav-link" href="../index.html">Home</a>
-            <a class="nav-link" href="../about-me/index.html">About me</a>
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="../../about-me/index.html"
+              >About me</a
+            >
             <div class="nav-item dropdown">
               <a
                 class="nav-link active dropdown-toggle"
                 aria-current="page"
-                href="index.html"
+                href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -60,17 +65,15 @@
               >
               <ul class="dropdown-menu dropdown-menu-light border border-0">
                 <li>
-                  <a class="dropdown-item" href="index.html">All projects</a>
+                  <a class="dropdown-item" href="../index.html">All projects</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="bananas/index.html"
+                  <a class="dropdown-item" href="../bananas/index.html"
                     >Banana quiz</a
                   >
                 </li>
                 <li>
-                  <a
-                    class="dropdown-item"
-                    href="number-guessing-game/index.html"
+                  <a class="dropdown-item" href="index.html"
                     >Number guessing game</a
                   >
                 </li>
@@ -80,10 +83,12 @@
         </div>
       </div>
     </nav>
-    <!-- Nav bar END-->
+    <!-- Navbar END -->
+
     <section>
-      <h1 class="text-center mt-4">Projects</h1>
+      <h1 class="text-center mt-4">Number Guessing Game</h1>
     </section>
+
     <!-- Footer START -->
     <footer class="bg-light text-center text-white mt-auto">
       <!-- Grid container -->
@@ -141,6 +146,6 @@
     </footer>
     <!-- Footer END -->
 
-    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
   </body>
 </html>

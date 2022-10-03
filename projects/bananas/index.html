@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Week 3 Project</title>
-    <link rel="stylesheet" href="../CSS/bootstrap.css" />
-    <link rel="stylesheet" href="../CSS/eloise.css" />
+    <link rel="stylesheet" href="../../CSS/bootstrap.css" />
+    <link rel="stylesheet" href="../../CSS/eloise.css" />
     <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="../CSS/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../CSS/bootstrap-icons.css" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -29,6 +29,7 @@
     <link rel="manifest" href="../images/favicon/site.webmanifest" />
   </head>
   <body>
+    <!-- Navbar START -->
     <nav class="navbar navbar-expand-md sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="../index.html"><h1>Eloise Salmon</h1></a>
@@ -36,24 +37,53 @@
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <div class="navbar-nav">
-            <a class="nav-link" href="../index.html">Home</a>
-            <a class="nav-link" href="../about-me/index.html">About me</a>
-            <a class="nav-link active" aria-current="page" href="index.html"
-              >Banana Quiz</a
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="../../about-me/index.html"
+              >About me</a
             >
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link active dropdown-toggle"
+                aria-current="page"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Projects</a
+              >
+              <ul class="dropdown-menu dropdown-menu-light border border-0">
+                <li>
+                  <a class="dropdown-item" href="../index.html">All projects</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="index.html">Bananas</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="../number-guessing-game/index.html"
+                    >Number guessing game</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </nav>
+    <!-- Navbar END -->
     <section>
       <h1>Bananas</h1>
       <h2>
@@ -103,7 +133,7 @@
         >
       </footer>
     </section>
-    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
     <script>
       let score = 0;
       // To edit h2 within JavaScript code
