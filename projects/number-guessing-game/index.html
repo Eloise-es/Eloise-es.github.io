@@ -7,26 +7,25 @@
     <title>Week 3 Project</title>
     <link rel="stylesheet" href="../../CSS/bootstrap.css" />
     <link rel="stylesheet" href="../../CSS/eloise.css" />
-    <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="../../CSS/bootstrap-icons.css" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../images/favicon/apple-touch-icon.png"
+      href="../../images/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../images/favicon/favicon-32x32.png"
+      href="../../images/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../images/favicon/favicon-16x16.png"
+      href="../../images/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <link rel="manifest" href="../../images/favicon/site.webmanifest" />
   </head>
   <body class="d-flex flex-column min-vh-100">
     <!-- Navbar START -->
@@ -85,8 +84,15 @@
     </nav>
     <!-- Navbar END -->
 
-    <section>
+    <section class="container">
       <h1 class="text-center mt-4">Number Guessing Game</h1>
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+          <button type="button" onclick="startGame()" class="btn btn-primary">
+            Start game
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- Footer START -->
@@ -147,5 +153,6 @@
     <!-- Footer END -->
 
     <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
