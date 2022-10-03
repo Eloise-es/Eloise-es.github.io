@@ -93,3 +93,8 @@ section button:hover {
   font-size: 20px;
   display: none;
 }
+#navDropdown {
+  background: cornsilk;
+  backdrop-filter: blur(30px);
+  box-shadow: 0px 20px 40px 5px rgba(0, 0, 0, 0.29);
+}
