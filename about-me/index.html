@@ -8,10 +8,24 @@
     <link rel="stylesheet" href="../CSS/bootstrap.css" />
     <link rel="stylesheet" href="../CSS/eloise.css" />
     <link rel="stylesheet" href="../CSS/bootstrap-icons.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
-<link rel="manifest" href="../images/favicon/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
   </head>
   <body class="d-flex flex-column min-vh-100">
     <!-- Navbar -->
@@ -47,10 +61,14 @@
               >
               <ul class="dropdown-menu border border-0" id="navDropdown">
                 <li>
-                  <a class="dropdown-item" href="../projects/index.html">All projects</a>
+                  <a class="dropdown-item" href="../projects/index.html"
+                    >All projects</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="../projects/bananas/index.html">Banana quiz</a>
+                  <a class="dropdown-item" href="../projects/bananas/index.html"
+                    >Banana quiz</a
+                  >
                 </li>
                 <li>
                   <a
@@ -70,30 +88,42 @@
     <section class="justify-content-center col-xl-10 col-xxl-8 mx-auto">
       <div class="container-fluid">
         <div class="row m-3">
-          <!-- Header and lead paragraph -->
-            <div class="about p-3 mb-3 d-block d-md-none">
-                  <h1 class="display-4 text-center">About me</h1>
-                  <p class="lead">I'm Eloise, I used to be a languages teacher but now I'm learning to code. Click below to see summaries of what I've been up to over the last decade.</p></div>
+          <!-- Header and lead paragraph (two copies - see inside mini CV) -->
+          <div class="about p-3 mb-3 d-block d-md-none">
+            <h1 class="display-4 text-center">About me</h1>
+            <p class="lead">
+              I'm Eloise, I teach English, French and Spanish and I'm learning
+              JavaScript and Dutch! Click below to see summaries of what I've
+              been up to over the last decade.
+            </p>
+          </div>
           <!-- Header and lead paragraph end -->
-              <div class="col-sm-5 p-0">
-                <div class="row m-0 mb-2">
-                  <!-- Images (3 versions for different sizes - xs set as frame, sm-md cropped and lg+ full size) -->
-                <div class="col-5 col-sm-12 p-0 pe-2">
-                  <div class="elo-frame d-block d-sm-none" style="background-image: url(../images/me-smaller.jpeg);" alt="Photo of Eloise"></div>
+          <!-- Images and mini CV with tabs START -->
+          <div class="col-sm-5 p-0">
+            <div class="row m-0 mb-2">
+              <!-- Images (3 versions for different sizes - xs set as frame, sm-md cropped and lg+ full size) -->
+              <div class="col-5 col-sm-12 p-0 pe-2 order-1 order-md-0">
+                <div
+                  class="elo-frame d-block d-sm-none"
+                  style="background-image: url(../images/me-smaller.jpeg)"
+                  alt="Photo of Eloise"
+                ></div>
                 <img
                   class="img-fluid m-0 d-none d-sm-block d-lg-none"
                   src="../images/me-smaller.jpeg"
                   alt="Photo of Eloise"
-               />
+                />
                 <img
                   class="img-fluid m-0 d-none d-lg-block pe-lg-3"
                   src="../images/me.jpeg"
                   alt="Photo of Eloise"
-               />
+                />
               </div>
               <!-- Images end -->
               <!-- mini CV with tabs -->
-               <div class="col-7 col-sm-12 d-lg-none p-0 pe-sm-2 mt-sm-3">
+              <div
+                class="col-7 col-sm-12 order-3 d-lg-none p-0 pe-sm-2 mt-sm-3"
+              >
                 <div class="list-group p-0" id="list-tab" role="tablist">
                   <a
                     class="list-group-item list-group-item-action active"
@@ -131,16 +161,23 @@
                     aria-controls="list-fourth"
                     >2013 - 2017</a
                   >
-                </div></div>
+                </div>
               </div>
-              </div>
-              <div class="col-12 col-sm-7 align-items-center">
-              <div class="row about p-3 mb-3 d-none d-md-block">
-                  <h1 class="display-4 text-center">About me</h1>
-                  <p class="lead">I'm Eloise, I used to be a languages teacher but now I'm learning to code. Click below to see summaries of what I've been up to over the last decade.</p></div>
-                <div class="row mt-md-auto bg-light">
-                    <div class="col-4 d-none d-lg-block">
-                    <div class="list-group mt-3" id="list-tab" role="tablist">
+            </div>
+          </div>
+          <div class="col-12 col-sm-7 align-items-center">
+            <div class="row about p-3 mb-3 d-none d-md-block">
+              <h1 class="display-4 text-center">About me</h1>
+              <p class="lead">
+                I'm Eloise, I teach English, French and Spanish and I'm learning
+                JavaScript and Dutch! Click below to see summaries of what I've
+                been up to over the last decade.
+              </p>
+            </div>
+            <div class="row mt-md-auto bg-light">
+              <!-- Tabs for CV v2 START -->
+              <div class="col-4 d-none d-lg-block">
+                <div class="list-group mt-3" id="list-tab" role="tablist">
                   <a
                     class="list-group-item list-group-item-action active"
                     id="list-first-list"
@@ -178,24 +215,36 @@
                     >2013 - 2017</a
                   >
                 </div>
-                    </div>
-                    <div class="col">
-                    <div class="tab-content bg-light text-bg-light p-2" id="nav-tabContent">
-                         <div
-                        class="tab-pane fade show active"
-                        id="list-first"
-                        role="tabpanel"
-                        aria-labelledby="list-first-list"
-                        > 
-                            <h3>Web Developer Bootcamp</h3>
-                            <h6>2022-present, Den Haag</h6>
-                            <p>I moved to the Netherlands in the summer and started 
-                            <a
-                                href="https://www.udemy.com/course/the-web-developer-bootcamp/"
-                                target="_blank"
-                             >Colt Steele's Web Developer Bootcamp course</a>
-                             on 1st September 2022. So far I have learned HTML, CSS and basic JavaScript and have built this website with Bootstrap. I expect to finish the course in November 2022 and start looking for a job as a junior developer.</p>
-                        </div>
+              </div>
+              <!-- Tabs for CV v2 END -->
+              <div class="col order-3">
+                <div
+                  class="tab-content bg-light text-bg-light p-2"
+                  id="nav-tabContent"
+                >
+                  <div
+                    class="tab-pane fade show active"
+                    id="list-first"
+                    role="tabpanel"
+                    aria-labelledby="list-first-list"
+                  >
+                    <h3>Web Developer Bootcamp</h3>
+                    <h6>2022-present, Den Haag</h6>
+                    <p>
+                      I moved to the Netherlands in the summer and started
+                      <a
+                        href="https://www.udemy.com/course/the-web-developer-bootcamp/"
+                        target="_blank"
+                        >Colt Steele's Web Developer Bootcamp course</a
+                      >
+                      on 1st September 2022. So far I have learned HTML, CSS and
+                      basic JavaScript and have built this website with
+                      Bootstrap. I expect to finish my course in January 2023 so
+                      I'm looking for entry level roles or traineeships in
+                      front-end development. I'm also teaching English part
+                      time, to adults and children, and learning Dutch!
+                    </p>
+                  </div>
                   <div
                     class="tab-pane fade"
                     id="list-second"
@@ -204,7 +253,15 @@
                   >
                     <h3>Secondary School Teacher of French and Spanish</h3>
                     <h6>2019-2022, Manchester</h6>
-                    <p>I moved to Manchester to do my teacher training, and went on to teach French and Spanish to students aged 11-18 in a school in Manchester. While teaching online during the coronavirus lockdowns, I developed a passion for education technology. My years as a secondary school teacher were very intense - I learnt a lot, but I also burnt out from endless 60 hour work weeks.</p>
+                    <p>
+                      I moved back to Manchester to do my teacher training, and
+                      went on to teach French and Spanish to students aged 11-18
+                      in a school in Manchester. When coronavirus hit and
+                      schools had to close, I developed a passion for education
+                      technology. My years as a secondary school teacher were
+                      very intense - I learnt a lot, but I also burnt out from
+                      endless work, stress and 60 hour weeks.
+                    </p>
                   </div>
                   <div
                     class="tab-pane fade"
@@ -214,7 +271,15 @@
                   >
                     <h3>Teacher of English as a Foreign Language</h3>
                     <h6>2017-2019, Paris</h6>
-                    <p>I trained to teach English as a foreign language and then moved to Paris, where I taught English to adults in a private language school. I enjoyed it but after a while I felt like I needed something more, so I decided to move back to the UK to train to become a secondary school teacher.</p>
+                    <p>
+                      I trained to teach English as a foreign language (CELTA)
+                      and then moved to Paris, where I taught English to adults
+                      in a private language school. I really enjoyed the job,
+                      met lots of interesting people and improved my French, but
+                      it was never meant to be a long term thing, so in July
+                      2019 I moved back to the UK to train to become a secondary
+                      school teacher.
+                    </p>
                   </div>
                   <div
                     class="tab-pane fade"
@@ -224,9 +289,16 @@
                   >
                     <h3>BA Hons French and Linguistics</h3>
                     <h6>2013-2017, University of Leeds</h6>
-                    <p>My course suited me well because it was scientific as well as creative. I enjoyed learning about how languages work, and was lucky enough to have really passionate professors teaching me. As part of the French course, I spent a year teaching English in Normandy, France, which was an amazing first experience living abroad. I lived with Spanish speakers, which is how I ended up learning Spanish.</p>
-                  </div></div>
-                </div>
+                    <p>
+                      My course suited me well because it was scientific as well
+                      as creative. I enjoyed learning about how languages work,
+                      and was lucky enough to have really passionate professors
+                      teaching me. As part of the French course, I spent a year
+                      teaching English in Normandy, France, which was an amazing
+                      first experience living abroad. I lived with Spanish
+                      speakers, which is how I ended up learning Spanish.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -234,8 +306,8 @@
         </div>
       </div>
     </section>
-   <!-- About page contents -->
-       <footer class="bg-light text-center text-white mt-auto">
+    <!-- About page contents -->
+    <footer class="bg-light text-center text-white mt-auto">
       <!-- Grid container -->
       <div class="container p-3 pb-0">
         <!-- Section: Social media -->
