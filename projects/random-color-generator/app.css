@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+section {
+  margin-top: 20%;
+}
+h1 {
+  font-size: 100px;
+}
+button {
+  font-size: 50px;
+  border-radius: 10px;
+  transition: 100ms;
+  background-color: white;
+}
+button:hover {
+  transform: scale(1.1);
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+button:active {
+  transform: unset;
+}
