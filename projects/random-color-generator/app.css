@@ -1,28 +1,24 @@
-body {
+#colors-page {
   text-align: center;
-  display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 30px;
+  padding: 10%;
 }
-section {
-  margin-top: 20%;
-}
-h1 {
-  font-size: 100px;
-}
-button {
+
+#colorBtn {
   font-size: 50px;
   border-radius: 10px;
   transition: 100ms;
   background-color: white;
+  margin-top: 20%;
 }
-button:hover {
+#colorBtn:hover {
   transform: scale(1.1);
   background-color: black;
   color: white;
   cursor: pointer;
 }
-button:active {
+#colorBtn:active {
   transform: unset;
 }
