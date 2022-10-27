@@ -19,6 +19,13 @@ h3 {
   border-radius: 5px;
   text-align: center;
 }
+.to-do-app {
+  margin-bottom: 10px;
+}
+.list {
+  background-color: white;
+  border: black solid 1px;
+}
 .instructions {
   list-style: none;
   text-align: left;
