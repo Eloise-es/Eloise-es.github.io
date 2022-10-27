@@ -1,6 +1,6 @@
 const navbar = `
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="https://www.eloise.es">
         <h1>Eloise Salmon</h1>
       </a>
       <button
