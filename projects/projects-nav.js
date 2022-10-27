@@ -24,7 +24,7 @@ const navbar = `
           </a>
           <div class="nav-item dropdown active">
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle active"
               href="https://www.eloise.es/projects"
               role="button"
               data-bs-toggle="dropdown"
@@ -49,6 +49,14 @@ const navbar = `
                   href="https://www.eloise.es/projects/number-guessing-game"
                 >
                   Number guessing game
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://www.eloise.es/projects/to-do-list"
+                >
+                  To do list
                 </a>
               </li>
               <li>
