@@ -7,13 +7,13 @@ const list = ["eat", "sleep", "rave", "repeat"];
 
 button.addEventListener("click", function () {
   let input = prompt("What would you like to do?");
-  while (input !== "quit" && input !== "q") {
+  while (input !== "quit" && input !== "q" && input !== null) {
     if (input === "add" || input === "a") {
       // Add new item - ask what it is then push onto array
       const newItem = prompt("What is the new item?");
       list.push(newItem);
       alert(`${newItem} added to list.`);
-      input = null;
+      input = "null";
     } else if (input === "list" || input === "l") {
       // view list, using for loop and stopping by resetting input to null so it doesn't cycle through again
       myList.innerHTML = "";
@@ -37,7 +37,7 @@ button.addEventListener("click", function () {
           input = null;
         }
         // if it's 'q' or 'quit', print the list and
-        else if (input === "q" || input === "quit") {
+        else if (input === "q" || input === "quit" || input === null) {
           myList.innerHTML = "";
           for (let i = 0; i < list.length; i++) {
             myList.insertAdjacentHTML("beforeend", `<li>${i}. ${list[i]}</li>`);
@@ -59,6 +59,10 @@ button.addEventListener("click", function () {
     }
   }
 });
+myList.innerHTML = "";
+for (let i = 0; i < list.length; i++) {
+  myList.insertAdjacentHTML("beforeend", `<li>${i}. ${list[i]}</li>`);
+}
 
 function showCurrentList() {
   let currentList = "";
