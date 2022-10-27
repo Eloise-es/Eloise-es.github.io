@@ -67,6 +67,14 @@ const navbar = `
                   Random colour generator
                 </a>
               </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://www.eloise.es/projects/pokemon"
+                >
+                  Pokemon collection
+                </a>
+              </li>
             </ul>
           </div>
         </div>
