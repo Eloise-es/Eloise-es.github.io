@@ -26,6 +26,10 @@ h3 {
   background-color: white;
   border: black solid 1px;
 }
+.list ul {
+  text-align: left;
+  list-style: none;
+}
 .instructions {
   list-style: none;
   text-align: left;
