@@ -4,15 +4,15 @@ const btn = document.querySelector("#colorBtn");
 
 // Create random numbers and convert to RGB code
 function randomColor() {
-  const newR = Math.floor(Math.random() * 255);
-  const newG = Math.floor(Math.random() * 255);
-  const newB = Math.floor(Math.random() * 255);
-  if (newR <= 150 && newG <= 150 && newB <= 150) {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  if ((r + g + b) / 3 <= 100) {
     h1.style.color = "white";
   } else {
     h1.style.color = "black";
   }
-  return `rgb(${newR}, ${newG}, ${newB})`;
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 // Make background change on button click
