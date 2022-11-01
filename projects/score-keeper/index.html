@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score Keeper</title>
+    <link rel="stylesheet" href="../../CSS/bootstrap.css" />
+    <link rel="stylesheet" href="../../CSS/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../CSS/eloise.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <nav></nav>
+    <main>
+      <h1>Score Keeper</h1>
+      <h2 id="score">
+        <span id="scoreP1">0</span> to <span id="scoreP2">0</span>
+      </h2>
+      <p>Use the buttons below to keep score.</p>
+      <label for="playing-to">Playing to</label>
+      <select name="playing-to" id="playing-to">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <br />
+      <button id="player-1">+1 Player One</button>
+      <button id="player-2">+1 Player Two</button>
+      <button id="reset">Reset</button>
+    </main>
+
+    <footer></footer>
+    <script src="app.js"></script>
+    <script src="../projects-nav.js"></script>
+    <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
