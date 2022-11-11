@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Score Keeper</title>
+
     <link rel="stylesheet" href="../../CSS/bootstrap.css" />
     <link rel="stylesheet" href="../../CSS/bootstrap-icons.css" />
     <link rel="stylesheet" href="../../CSS/eloise.css" />
-    <link rel="stylesheet" href="app.css" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -31,28 +31,50 @@
   <body>
     <nav></nav>
     <main>
-      <h1>Score Keeper</h1>
-      <h2 id="score">
-        <span id="scoreP1">0</span> to <span id="scoreP2">0</span>
-      </h2>
-      <p>Use the buttons below to keep score.</p>
-      <label for="playing-to">Playing to</label>
-      <select name="playing-to" id="playing-to">
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-      <br />
-      <button id="player-1">+1 Player One</button>
-      <button id="player-2">+1 Player Two</button>
-      <button id="reset">Reset</button>
-    </main>
+      <div class="card" style="width: 20rem">
+        <img
+          src="https://images.unsplash.com/photo-1611762348135-5b09d2f0390d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+          class="card-img-top"
+          alt="Ping pong bats and a ball"
+        />
+        <div class="card-body container">
+          <h5 class="card-title">Score Keeper</h5>
 
+          <h2 id="score">
+            <span id="scoreP1">0</span> to
+            <span id="scoreP2">0</span>
+          </h2>
+          <p class="card-text">Use the buttons below to keep score.</p>
+          <div class="row">
+            <select
+              name="playing-to"
+              id="playing-to"
+              class="form-select col m-2"
+            >
+              <option value="3">Playing to 3</option>
+              <option value="4">Playing to 4</option>
+              <option value="5">Playing to 5</option>
+              <option value="6">Playing to 6</option>
+              <option value="7">Playing to 7</option>
+              <option value="8">Playing to 8</option>
+              <option value="9">Playing to 9</option>
+              <option value="10">Playing to 10</option>
+            </select>
+            <button id="reset" class="btn btn-success col col-3 m-2">
+              Reset
+            </button>
+          </div>
+          <div class="row">
+            <button id="player-1" class="btn btn-primary col m-1">
+              +1 Player One
+            </button>
+            <button id="player-2" class="btn btn-danger col m-1">
+              +1 Player Two
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer></footer>
     <script src="app.js"></script>
     <script src="../projects-nav.js"></script>

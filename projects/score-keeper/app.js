@@ -68,16 +68,16 @@ function enableButtons() {
 // Applies classes depending on who is winner and loser. These change colours to red and green
 function applyColors() {
   if (scorePlayer1 > scorePlayer2) {
-    P1Display.classList.add("winner");
-    P2Display.classList.add("loser");
+    P1Display.classList.add("text-success");
+    P2Display.classList.add("text-danger");
   } else {
-    P1Display.classList.add("loser");
-    P2Display.classList.add("winner");
+    P1Display.classList.add("text-danger");
+    P2Display.classList.add("text-success");
   }
 }
 
 // Removes classes on scores to reset colours
 function resetColors() {
-  P1Display.classList.remove("winner", "loser");
-  P2Display.classList.remove("loser", "winner");
+  P1Display.classList.remove("text-success", "text-danger");
+  P2Display.classList.remove("text-danger", "text-success");
 }
