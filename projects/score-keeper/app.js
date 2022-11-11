@@ -77,7 +77,7 @@ function reset() {
   serveCount = 1;
   serveCountDisplay.className = "";
   serveCountDisplay.classList.add("text-start", "text-primary");
-  serveCountDisplay.innerText = "Serve 1";
+  serveCountDisplay.innerText = "Serve 1 for Player One";
 }
 
 // Enable and disable buttons
