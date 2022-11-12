@@ -75,6 +75,14 @@ const navbar = `
                   Pokemon collection
                 </a>
               </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://www.eloise.es/projects/score-keeper"
+                >
+                  Ping Pong score keeper
+                </a>
+              </li>
             </ul>
           </div>
         </div>
