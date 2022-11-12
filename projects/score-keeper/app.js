@@ -3,10 +3,41 @@ const targetScoreSelect = document.querySelector("#playing-to");
 const player1Btn = document.querySelector("#player-1");
 const player2Btn = document.querySelector("#player-2");
 const resetBtn = document.querySelector("#reset");
-const score = document.querySelector("#score");
+const winnerIs = document.querySelector("#winnerIs");
 const P1Display = document.querySelector("#scoreP1");
 const P2Display = document.querySelector("#scoreP2");
 const serveCountDisplay = document.querySelector("#serveCountDisplay");
+const customiseNamesButton = document.querySelector("#customiseNamesButton");
+const form = document.querySelector("form");
+const formCollapse = document.querySelector("#formCollapse");
+
+// Customise names
+let namePlayer1 = "Player One";
+let namePlayer2 = "Player Two";
+
+form.addEventListener("submit", function (e) {
+  // Stay on this page on submit
+  e.preventDefault();
+  // Change names
+  namePlayer1 = form.elements.inputP1.value;
+  namePlayer2 = form.elements.inputP2.value;
+  console.log(`player 1: ${namePlayer1}`);
+  console.log(`player 2: ${namePlayer2}`);
+  if (!namePlayer1) {
+    namePlayer1 = "Player One";
+  }
+  if (!namePlayer2) {
+    namePlayer2 = "Player Two";
+  }
+  player1Btn.innerText = `+1 ${namePlayer1}`;
+  player2Btn.innerText = `+1 ${namePlayer2}`;
+  // Hide the form again using bootstrap
+  new bootstrap.Collapse(formCollapse, {
+    hide: true,
+  });
+  // Update serve tracker with new names (but retain counter)
+  printServes();
+});
 
 // Define starting scores (let so they can change)
 let scorePlayer1 = 0;
@@ -42,28 +73,11 @@ function checkGamePoints() {
     disableButtons();
     console.log("game over");
     applyColors();
+    confetti();
   }
   // Count after each point scored to see who should serve (2 serves per person)
-  console.log("serve count", serveCount);
   serveCount++;
-  if (serveCount === 1) {
-    serveCountDisplay.innerText = "Serve 1 for Player One";
-    serveCountDisplay.className = "";
-    serveCountDisplay.classList.add("text-start", "text-primary");
-  } else if (serveCount === 2) {
-    serveCountDisplay.innerText = "Serve 2 for Player One";
-    serveCountDisplay.className = "";
-    serveCountDisplay.classList.add("text-start", "text-primary");
-  } else if (serveCount === 3) {
-    serveCountDisplay.innerText = "Serve 1 for Player Two";
-    serveCountDisplay.className = "";
-    serveCountDisplay.classList.add("text-end", "text-danger");
-  } else if (serveCount === 4) {
-    serveCountDisplay.innerText = "Serve 2 for Player Two";
-    serveCountDisplay.className = "";
-    serveCountDisplay.classList.add("text-end", "text-danger");
-    serveCount = 0;
-  }
+  printServes();
 }
 
 // To reset the score to zero, enable buttons again, reset colours by removing classes
@@ -77,7 +91,7 @@ function reset() {
   serveCount = 1;
   serveCountDisplay.className = "";
   serveCountDisplay.classList.add("text-start", "text-primary");
-  serveCountDisplay.innerText = "Serve 1 for Player One";
+  serveCountDisplay.innerText = `Serve 1 for ${namePlayer1}`;
 }
 
 // Enable and disable buttons
@@ -95,9 +109,13 @@ function applyColors() {
   if (scorePlayer1 > scorePlayer2) {
     P1Display.classList.add("text-success");
     P2Display.classList.add("text-danger");
+    let content = document.createTextNode(`(${namePlayer1} wins!)`);
+    winnerIs.appendChild(content);
   } else {
     P1Display.classList.add("text-danger");
     P2Display.classList.add("text-success");
+    let content = document.createTextNode(`(${namePlayer2} wins!)`);
+    winnerIs.appendChild(content);
   }
 }
 
@@ -105,4 +123,26 @@ function applyColors() {
 function resetColors() {
   P1Display.classList.remove("text-success", "text-danger");
   P2Display.classList.remove("text-danger", "text-success");
+  winnerIs.innerHTML = "";
+}
+
+function printServes() {
+  if (serveCount === 1) {
+    serveCountDisplay.innerText = `Serve 1 for ${namePlayer1}`;
+    serveCountDisplay.className = "";
+    serveCountDisplay.classList.add("text-start", "text-primary");
+  } else if (serveCount === 2) {
+    serveCountDisplay.innerText = `Serve 2 for ${namePlayer1}`;
+    serveCountDisplay.className = "";
+    serveCountDisplay.classList.add("text-start", "text-primary");
+  } else if (serveCount === 3) {
+    serveCountDisplay.innerText = `Serve 1 for ${namePlayer2}`;
+    serveCountDisplay.className = "";
+    serveCountDisplay.classList.add("text-end", "text-danger");
+  } else if (serveCount === 4) {
+    serveCountDisplay.innerText = `Serve 2 for ${namePlayer2}`;
+    serveCountDisplay.className = "";
+    serveCountDisplay.classList.add("text-end", "text-danger");
+    serveCount = 0;
+  }
 }
