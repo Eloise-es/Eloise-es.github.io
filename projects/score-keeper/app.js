@@ -130,23 +130,36 @@ function announceWinner() {
 
 // This prints the current serve below the corresponding button in the correct colour
 function printServes() {
-  if (serveCount === 1) {
-    serveCountDisplay.innerText = `Serve 1 for ${playerOne.name}`;
-    serveCountDisplay.className = "";
-    serveCountDisplay.classList.add("text-start", "text-primary");
-  } else if (serveCount === 2) {
-    serveCountDisplay.innerText = `Serve 2 for ${playerOne.name}`;
-    serveCountDisplay.className = "";
-    serveCountDisplay.classList.add("text-start", "text-primary");
-  } else if (serveCount === 3) {
-    serveCountDisplay.innerText = `Serve 1 for ${playerTwo.name}`;
-    serveCountDisplay.className = "";
-    serveCountDisplay.classList.add("text-end", "text-danger");
-  } else if (serveCount === 4) {
-    serveCountDisplay.innerText = `Serve 2 for ${playerTwo.name}`;
-    serveCountDisplay.className = "";
-    serveCountDisplay.classList.add("text-end", "text-danger");
-    serveCount = 0;
+  if (isLowTarget()) {
+    if (serveCount === 1) {
+      serveCountDisplay.innerText = `Serve for ${playerOne.name}`;
+      serveCountDisplay.className = "";
+      serveCountDisplay.classList.add("text-start", "text-primary");
+    } else if (serveCount === 2) {
+      serveCountDisplay.innerText = `Serve for ${playerTwo.name}`;
+      serveCountDisplay.className = "";
+      serveCountDisplay.classList.add("text-end", "text-danger");
+      serveCount = 0;
+    }
+  } else {
+    if (serveCount === 1) {
+      serveCountDisplay.innerText = `Serve 1 for ${playerOne.name}`;
+      serveCountDisplay.className = "";
+      serveCountDisplay.classList.add("text-start", "text-primary");
+    } else if (serveCount === 2) {
+      serveCountDisplay.innerText = `Serve 2 for ${playerOne.name}`;
+      serveCountDisplay.className = "";
+      serveCountDisplay.classList.add("text-start", "text-primary");
+    } else if (serveCount === 3) {
+      serveCountDisplay.innerText = `Serve 1 for ${playerTwo.name}`;
+      serveCountDisplay.className = "";
+      serveCountDisplay.classList.add("text-end", "text-danger");
+    } else if (serveCount === 4) {
+      serveCountDisplay.innerText = `Serve 2 for ${playerTwo.name}`;
+      serveCountDisplay.className = "";
+      serveCountDisplay.classList.add("text-end", "text-danger");
+      serveCount = 0;
+    }
   }
 }
 
