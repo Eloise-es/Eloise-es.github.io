@@ -100,7 +100,7 @@ function checkGamePoints() {
     }
   } else {
     // Apply rules for traditional games
-    if (playerOne.score === targetScore || playerTwo.score === targetScore) {
+    if (playerOne.score >= targetScore || playerTwo.score >= targetScore) {
       if (Math.abs(playerOne.score - playerTwo.score) > 1) {
         // Disable buttons and announce winner with confetti by catdad
         playerOne.button.disabled = true;
