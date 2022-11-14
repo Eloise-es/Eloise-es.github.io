@@ -23,6 +23,7 @@ const playerTwo = {
 // Define default target score and serve count (let so they can change)
 let targetScore = 3;
 let serveCount = 1;
+let deuce = false;
 
 //When the number being played to is changed (need to parse as it's a string)
 targetScoreSelect.addEventListener("change", function (e) {
@@ -106,7 +107,8 @@ function checkGamePoints() {
         playerTwo.button.disabled = true;
         announceWinner();
       } else {
-        console.log("must win by at least 2 points");
+        // Set deuce to true to change the way serves are counted
+        deuce = true;
       }
     }
   }
@@ -130,7 +132,7 @@ function announceWinner() {
 
 // This prints the current serve below the corresponding button in the correct colour
 function printServes() {
-  if (isLowTarget()) {
+  if (isLowTarget() || deuce === true) {
     if (serveCount === 1) {
       serveCountDisplay.innerText = `Serve for ${playerOne.name}`;
       serveCountDisplay.className = "";
@@ -176,5 +178,6 @@ function reset() {
   }
   winnerIs.innerHTML = "";
   serveCount = 1;
+  deuce = false;
   printServes();
 }
