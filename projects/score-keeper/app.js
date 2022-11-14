@@ -30,6 +30,7 @@ targetScoreSelect.addEventListener("change", function (e) {
   isLowTarget();
 });
 
+// Tests if target score is 5 or less to apply simpler rules
 function isLowTarget() {
   if (targetScore <= 5) {
     return true;
@@ -81,19 +82,33 @@ function addPoint(player) {
   player.score++;
   player.display.innerText = player.score;
   checkGamePoints();
-  // Count after each point scored to see who should serve (2 serves per person)
+  // Count after each point scored to see who should serve next (update serve count)
   serveCount++;
   printServes();
 }
 
 // Function to check if game is over (called each time a point is won)
 function checkGamePoints() {
-  if (playerOne.score === targetScore || playerTwo.score === targetScore) {
-    // Disable buttons and announce winner with confetti by catdad
-    playerOne.button.disabled = true;
-    playerTwo.button.disabled = true;
-    announceWinner();
-    confetti();
+  if (isLowTarget()) {
+    // Apply rules for low target games
+    if (playerOne.score === targetScore || playerTwo.score === targetScore) {
+      // Disable buttons and announce winner with confetti by catdad
+      playerOne.button.disabled = true;
+      playerTwo.button.disabled = true;
+      announceWinner();
+    }
+  } else {
+    // Apply rules for traditional games
+    if (playerOne.score === targetScore || playerTwo.score === targetScore) {
+      if (Math.abs(playerOne.score - playerTwo.score) > 1) {
+        // Disable buttons and announce winner with confetti by catdad
+        playerOne.button.disabled = true;
+        playerTwo.button.disabled = true;
+        announceWinner();
+      } else {
+        console.log("must win by at least 2 points");
+      }
+    }
   }
 }
 
@@ -110,6 +125,7 @@ function announceWinner() {
     let content = document.createTextNode(`(${playerTwo.name} wins!)`);
     winnerIs.appendChild(content);
   }
+  confetti();
 }
 
 // This prints the current serve below the corresponding button in the correct colour
