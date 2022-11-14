@@ -27,7 +27,16 @@ let serveCount = 1;
 //When the number being played to is changed (need to parse as it's a string)
 targetScoreSelect.addEventListener("change", function (e) {
   targetScore = parseInt(this.value);
+  isLowTarget();
 });
+
+function isLowTarget() {
+  if (targetScore <= 5) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // Customise names using the form
 form.addEventListener("submit", function (e) {
