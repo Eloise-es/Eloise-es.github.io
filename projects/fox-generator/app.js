@@ -1,7 +1,7 @@
 // Declare variables from HTML
 const generateBtn = document.querySelector("#generate-fox-btn");
 const img = document.querySelector("img");
-const foxName = document.querySelector("#fox-name");
+const nameDisplay = document.querySelector("#fox-name");
 const characterDisplay = document.querySelector("#character");
 const age = document.querySelector("#age");
 const place = document.querySelector("#place");
@@ -18,16 +18,31 @@ function generateFox() {
   console.log("generating fox....");
   randomFox();
   getStarWarsPerson(Math.floor(Math.random() * 100));
+  getRandomName();
 }
+
+// Get random name from DRY
+const getRandomName = async () => {
+  try {
+    const res = await fetch(
+      "https://names.drycodes.com/10?nameOptions=girl_names"
+    );
+    const data = await res;
+    console.log(data);
+    // const newName = res.data;
+    // console.log(newName);
+    // nameDisplay.innerHTML = newName;
+  } catch (e) {
+    console.log("ERROR", e);
+  }
+};
 
 // Get star wars character from SWAPI
 const getStarWarsPerson = async (id) => {
   try {
     const res = await axios.get(`https://swapi.dev/api/people/${id}/`);
-    console.log(res.data);
-    const newName = res.data.name;
-    characterDisplay.innerHTML = newName;
-    console.log(newName);
+    const newCharacter = res.data.name;
+    characterDisplay.innerHTML = newCharacter;
   } catch (e) {
     console.log("ERROR", e);
     characterDisplay.innerHTML = "Not a Star Wars fan";
