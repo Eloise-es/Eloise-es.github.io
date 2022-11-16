@@ -31,9 +31,30 @@
   <body>
     <nav></nav>
     <main>
-      <h1>Fox generator</h1>
-      <button id="generate-fox-btn">Generate fox</button>
-      <img src="#" alt="Random fox" />
+      <h1 class="display-3">Fox generator</h1>
+
+      <div class="card" style="width: 20rem">
+        <div class="card-body">
+          <h5 class="card-title" id="fox-name">Fox name will go here</h5>
+          <p class="card-text">Information about the fox will go here.
+            <ul>
+                <li id="name">Name: </li>
+                <li id="age">Age: </li>
+                <li id="place">Place of birth: </li>
+                <li id="book">Favourite book: </li>
+                <li id="joke">Favourite joke: </li>
+            </ul>
+          </p>
+          <button class="btn btn-secondary" id="generate-fox-btn">
+            Generate new fox
+          </button>
+        </div>
+        <img
+          src="https://randomfox.ca/images/1.jpg"
+          class="card-img-bottom"
+          alt="Random fox"
+        />
+      </div>
     </main>
 
     <footer></footer>
