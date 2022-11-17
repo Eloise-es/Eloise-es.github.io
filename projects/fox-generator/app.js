@@ -19,15 +19,26 @@ function generateFox() {
   console.log("generating fox....");
   resetFox();
   randomFoxPicture();
-  randomJokeSpanish();
+  getAge();
+  getDadJoke();
   getRandomName();
   getStarWarsPerson(Math.floor(Math.random() * 100));
+  console.log("Fox complete!");
 }
 
 // Reset fox info so appended data is removed
 function resetFox() {
   jokeDisplay.innerHTML = "";
 }
+
+// Get age (random number)
+const getAge = () => {
+  let age = Math.floor(Math.random() * 10);
+  if (age === 0) {
+    age = "6 months";
+  }
+  ageDisplay.innerHTML = age;
+};
 
 // Get random name from Random User API
 const getRandomName = async () => {
@@ -66,6 +77,20 @@ const randomFoxPicture = async () => {
     return newFox;
   } catch (e) {
     return "error", e;
+  }
+};
+
+// Get random English joke
+const getDadJoke = async () => {
+  try {
+    const config = { headers: { Accept: "application/json" } };
+    const res = await axios.get("https://icanhazdadjoke.com/", config);
+    const newJoke = res.data.joke;
+    const ul = jokeDisplay.appendChild(document.createElement("ul"));
+    const li = ul.appendChild(document.createElement("li"));
+    li.innerHTML = newJoke;
+  } catch (e) {
+    return "NO JOKES AVAILABLE! SORRY :(";
   }
 };
 
