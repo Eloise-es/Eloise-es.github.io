@@ -83,6 +83,14 @@ const navbar = `
                   Ping Pong score keeper
                 </a>
               </li>
+              <li>
+              <a
+                class="dropdown-item"
+                href="https://www.eloise.es/projects/fox-generator"
+              >
+                Random Fox Generator
+              </a>
+              </li>
             </ul>
           </div>
         </div>
