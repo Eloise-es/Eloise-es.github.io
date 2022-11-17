@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="../../CSS/bootstrap.css" />
+    <link rel="stylesheet" href="../../CSS/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../CSS/eloise.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <nav></nav>
+    <main>
+      <h1 class="display-3">Fox generator</h1>
+
+      <div class="card" style="width: 20rem">
+        <div class="card-body">
+          <h5 class="card-title" id="fox-name">Fox name will go here</h5>
+          <p class="card-text">
+            <ul>
+                <li ><b>Name: </b><span id="name"></span></li>
+                <li ><b>Age: </b><span id="age"></span></li>
+                <li ><b>Place of birth: </b><span id="place"></span></li>
+                <li ><b>Favourite Star Wars character: </b><span id="character"></span></li>
+                <li ><b>Favourite joke:</b> <span id="joke"></span></li>
+            </ul>
+          </p>
+          <button class="btn btn-secondary" id="generate-fox-btn">
+            Generate new fox
+          </button>
+        </div>
+        <img
+          src="https://randomfox.ca/images/1.jpg"
+          class="card-img-bottom"
+          alt="Random fox"
+        />
+      </div>
+    </main>
+
+    <footer></footer>
+    <script src="../projects-nav.js"></script>
+    <script src="../../bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
