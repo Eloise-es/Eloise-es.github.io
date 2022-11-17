@@ -1,9 +1,10 @@
 // Declare variables from HTML
 const generateBtn = document.querySelector("#generate-fox-btn");
 const img = document.querySelector("img");
-const nameDisplay = document.querySelector("#fox-name");
-const characterDisplay = document.querySelector("#character");
+const mainDisplay = document.querySelector("#fox-name");
+const nameDisplay = document.querySelector("#name");
 const ageDisplay = document.querySelector("#age");
+const characterDisplay = document.querySelector("#character");
 const placeDisplay = document.querySelector("#place");
 const bookDisplay = document.querySelector("#book");
 const jokeDisplay = document.querySelector("#joke");
@@ -18,9 +19,9 @@ function generateFox() {
   console.log("generating fox....");
   resetFox();
   randomFoxPicture();
-  getStarWarsPerson(Math.floor(Math.random() * 100));
-  getRandomName();
   randomJokeSpanish();
+  getRandomName();
+  getStarWarsPerson(Math.floor(Math.random() * 100));
 }
 
 // Reset fox info so appended data is removed
@@ -28,27 +29,19 @@ function resetFox() {
   jokeDisplay.innerHTML = "";
 }
 
-// Get random name from DRY
+// Get random name from Random User API
 const getRandomName = async () => {
   try {
-    const res = await fetch(
-      "http://names.drycodes.com/100?separator=space&nameOptions=boy_names"
-    );
-    const data = res;
-    console.log(data);
-    // const newName = res.data;
-    // console.log(newName);
-    // nameDisplay.innerHTML = newName;
+    const res = await axios.get(`https://randomuser.me/api/`);
+    const firstName = res.data.results[0].name.first;
+    const lastName = res.data.results[0].name.last;
+    mainDisplay.innerHTML = `Hi, my name is ${firstName}!`;
+    nameDisplay.innerHTML = `${firstName} ${lastName}`;
+    const newCountry = res.data.results[0].location.country;
+    placeDisplay.innerHTML = newCountry;
   } catch (e) {
     console.log("ERROR", e);
-  }
-  try {
-    const res = await axios.get(
-      "http://names.drycodes.com/100?separator=space&nameOptions=boy_names"
-    );
-    console.log(res.data);
-  } catch (e) {
-    console.log("ERROR", e);
+    characterDisplay.innerHTML = "No name";
   }
 };
 
@@ -56,7 +49,6 @@ const getRandomName = async () => {
 const getStarWarsPerson = async (id) => {
   try {
     const res = await axios.get(`https://swapi.dev/api/people/${id}/`);
-    console.log(res.data);
     const newCharacter = res.data.name;
     characterDisplay.innerHTML = `<a href = "https://starwars.fandom.com/wiki/${newCharacter}" target = "_blank"> ${newCharacter}</a>`;
   } catch (e) {
@@ -92,7 +84,7 @@ const randomJokeSpanish = async () => {
     });
     return newJoke;
   } catch (e) {
-    jokeDisplay.innerHTML = "No lo sé";
+    jokeDisplay.innerHTML = "None";
     return "error", e;
   }
 };
