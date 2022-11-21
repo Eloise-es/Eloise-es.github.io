@@ -93,6 +93,9 @@ const navbar = `
               </li>
             </ul>
           </div>
+          <a class="nav-link" href="https://www.eloise.es/teaching">
+            Teaching
+          </a>
         </div>
       </div>
     </div>
