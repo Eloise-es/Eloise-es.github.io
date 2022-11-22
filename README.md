@@ -18,6 +18,7 @@ This portfolio contains all the projects I've completed so far, as well as an ab
 *   🥚  Pokemon list using JavaScript
 *   🌈  Random colour generator
 *   🏓  Ping pong score keeper
+*   🦊  Random fox generator
 
 
 ### Future project ideas...
