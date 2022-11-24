@@ -8,6 +8,8 @@ const characterDisplay = document.querySelector("#character");
 const placeDisplay = document.querySelector("#place");
 const bookDisplay = document.querySelector("#book");
 const jokeDisplay = document.querySelector("#joke");
+const fullDisplay = document.querySelector("#fullDisplay");
+const spinner = document.querySelector("#spinner");
 
 // Declare variables
 let firstName = "";
@@ -42,6 +44,8 @@ function generateFox() {
 // Reset fox info so appended data is removed (only joke is appended, rest is changed)
 function resetFox() {
   jokeDisplay.innerHTML = "";
+  fullDisplay.classList.add("d-none");
+  spinner.classList.remove("d-none");
 }
 
 // Get age (random number)
@@ -132,4 +136,6 @@ function printNewFox() {
   const ul = jokeDisplay.appendChild(document.createElement("ul"));
   const li = ul.appendChild(document.createElement("li"));
   li.innerHTML = joke;
+  fullDisplay.classList.remove("d-none");
+  spinner.classList.add("d-none");
 }
