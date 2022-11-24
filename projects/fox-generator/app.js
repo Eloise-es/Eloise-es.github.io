@@ -9,6 +9,11 @@ const placeDisplay = document.querySelector("#place");
 const bookDisplay = document.querySelector("#book");
 const jokeDisplay = document.querySelector("#joke");
 
+// Declare variables
+let firstName = "";
+let lastName = "";
+let country = "";
+
 // Add event listener to button
 generateBtn.addEventListener("click", function () {
   generateFox();
@@ -18,11 +23,15 @@ generateBtn.addEventListener("click", function () {
 function generateFox() {
   console.log("generating fox....");
   resetFox();
-  randomFoxPicture();
-  getAge();
-  getDadJoke();
-  getRandomName();
-  getStarWarsPerson(Math.floor(Math.random() * 100));
+  Promise.all([
+    getRandomUser(),
+    randomFoxPicture(),
+    getAge(),
+    getStarWarsPerson(Math.floor(Math.random() * 100)),
+    getDadJoke(),
+  ]).then(() => {
+    printNewFox();
+  });
   console.log("Fox complete!");
 }
 
@@ -41,15 +50,12 @@ const getAge = () => {
 };
 
 // Get random name from Random User API
-const getRandomName = async () => {
+const getRandomUser = async () => {
   try {
     const res = await axios.get(`https://randomuser.me/api/`);
-    const firstName = res.data.results[0].name.first;
-    const lastName = res.data.results[0].name.last;
-    mainDisplay.innerHTML = `Hi, my name is ${firstName}!`;
-    nameDisplay.innerHTML = `${firstName} ${lastName}`;
-    const newCountry = res.data.results[0].location.country;
-    placeDisplay.innerHTML = newCountry;
+    firstName = res.data.results[0].name.first;
+    lastName = res.data.results[0].name.last;
+    country = res.data.results[0].location.country;
   } catch (e) {
     console.log("ERROR", e);
     characterDisplay.innerHTML = "No name";
@@ -113,3 +119,10 @@ const randomJokeSpanish = async () => {
     return "error", e;
   }
 };
+
+// Function that prints all data at once when it's fulfilled
+function printNewFox() {
+  mainDisplay.innerHTML = `Hi, my name is ${firstName}!`;
+  nameDisplay.innerHTML = `${firstName} ${lastName}`;
+  placeDisplay.innerHTML = country;
+}
