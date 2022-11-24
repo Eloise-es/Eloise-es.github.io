@@ -15,6 +15,7 @@ let lastName = "";
 let country = "";
 let foxImg = "https://randomfox.ca/images/1.jpg";
 let age = 0;
+let starWarsCharacter = "";
 
 // Add event listener to button
 generateBtn.addEventListener("click", function () {
@@ -64,11 +65,10 @@ const getRandomUser = async () => {
 const getStarWarsPerson = async (id) => {
   try {
     const res = await axios.get(`https://swapi.dev/api/people/${id}/`);
-    const newCharacter = res.data.name;
-    characterDisplay.innerHTML = `<a href = "https://starwars.fandom.com/wiki/${newCharacter}" target = "_blank"> ${newCharacter}</a>`;
+    starWarsCharacter = res.data.name;
   } catch (e) {
     console.log("ERROR", e);
-    characterDisplay.innerHTML = "Not a Star Wars fan";
+    starWarsCharacter = "not a fan";
   }
 };
 
@@ -77,7 +77,6 @@ const randomFoxPicture = async () => {
   try {
     const res = await axios.get("https://randomfox.ca/floof/?ref=apilist.fun");
     foxImg = res.data.image;
-    return foxImg;
   } catch (e) {
     return "error", e;
   }
@@ -127,4 +126,9 @@ function printNewFox() {
     age = "6 months";
   }
   ageDisplay.innerHTML = age;
+  if (starWarsCharacter === "not a fan") {
+    characterDisplay.innerHTML = "Not a Star Wars fan";
+  } else {
+    characterDisplay.innerHTML = `<a href = "https://starwars.fandom.com/wiki/${starWarsCharacter}" target = "_blank"> ${starWarsCharacter}</a>`;
+  }
 }
