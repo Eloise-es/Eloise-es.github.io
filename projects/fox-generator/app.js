@@ -16,6 +16,7 @@ let country = "";
 let foxImg = "https://randomfox.ca/images/1.jpg";
 let age = 0;
 let starWarsCharacter = "";
+let joke = "";
 
 // Add event listener to button
 generateBtn.addEventListener("click", function () {
@@ -87,10 +88,7 @@ const getDadJoke = async () => {
   try {
     const config = { headers: { Accept: "application/json" } };
     const res = await axios.get("https://icanhazdadjoke.com/", config);
-    const newJoke = res.data.joke;
-    const ul = jokeDisplay.appendChild(document.createElement("ul"));
-    const li = ul.appendChild(document.createElement("li"));
-    li.innerHTML = newJoke;
+    joke = res.data.joke;
   } catch (e) {
     return "NO JOKES AVAILABLE! SORRY :(";
   }
@@ -131,4 +129,7 @@ function printNewFox() {
   } else {
     characterDisplay.innerHTML = `<a href = "https://starwars.fandom.com/wiki/${starWarsCharacter}" target = "_blank"> ${starWarsCharacter}</a>`;
   }
+  const ul = jokeDisplay.appendChild(document.createElement("ul"));
+  const li = ul.appendChild(document.createElement("li"));
+  li.innerHTML = joke;
 }
