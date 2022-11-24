@@ -14,6 +14,7 @@ let firstName = "";
 let lastName = "";
 let country = "";
 let foxImg = "https://randomfox.ca/images/1.jpg";
+let age = 0;
 
 // Add event listener to button
 generateBtn.addEventListener("click", function () {
@@ -43,11 +44,7 @@ function resetFox() {
 
 // Get age (random number)
 const getAge = () => {
-  let age = Math.floor(Math.random() * 10);
-  if (age === 0) {
-    age = "6 months";
-  }
-  ageDisplay.innerHTML = age;
+  age = Math.floor(Math.random() * 10);
 };
 
 // Get random name from Random User API
@@ -126,4 +123,8 @@ function printNewFox() {
   nameDisplay.innerHTML = `${firstName} ${lastName}`;
   placeDisplay.innerHTML = country;
   img.src = foxImg;
+  if (age === 0) {
+    age = "6 months";
+  }
+  ageDisplay.innerHTML = age;
 }
