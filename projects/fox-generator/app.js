@@ -13,6 +13,7 @@ const jokeDisplay = document.querySelector("#joke");
 let firstName = "";
 let lastName = "";
 let country = "";
+let foxImg = "https://randomfox.ca/images/1.jpg";
 
 // Add event listener to button
 generateBtn.addEventListener("click", function () {
@@ -35,7 +36,7 @@ function generateFox() {
   console.log("Fox complete!");
 }
 
-// Reset fox info so appended data is removed
+// Reset fox info so appended data is removed (only joke is appended, rest is changed)
 function resetFox() {
   jokeDisplay.innerHTML = "";
 }
@@ -78,9 +79,8 @@ const getStarWarsPerson = async (id) => {
 const randomFoxPicture = async () => {
   try {
     const res = await axios.get("https://randomfox.ca/floof/?ref=apilist.fun");
-    const newFox = res.data.image;
-    img.src = newFox;
-    return newFox;
+    foxImg = res.data.image;
+    return foxImg;
   } catch (e) {
     return "error", e;
   }
@@ -125,4 +125,5 @@ function printNewFox() {
   mainDisplay.innerHTML = `Hi, my name is ${firstName}!`;
   nameDisplay.innerHTML = `${firstName} ${lastName}`;
   placeDisplay.innerHTML = country;
+  img.src = foxImg;
 }
