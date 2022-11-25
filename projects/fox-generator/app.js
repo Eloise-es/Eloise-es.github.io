@@ -8,6 +8,17 @@ const characterDisplay = document.querySelector("#character");
 const placeDisplay = document.querySelector("#place");
 const bookDisplay = document.querySelector("#book");
 const jokeDisplay = document.querySelector("#joke");
+const fullDisplay = document.querySelector("#fullDisplay");
+const spinner = document.querySelector("#spinner");
+
+// Declare variables
+let firstName = "";
+let lastName = "";
+let country = "";
+let foxImg = "https://randomfox.ca/images/1.jpg";
+let age = 0;
+let starWarsCharacter = "";
+let joke = "";
 
 // Add event listener to button
 generateBtn.addEventListener("click", function () {
@@ -18,38 +29,37 @@ generateBtn.addEventListener("click", function () {
 function generateFox() {
   console.log("generating fox....");
   resetFox();
-  randomFoxPicture();
-  getAge();
-  getDadJoke();
-  getRandomName();
-  getStarWarsPerson(Math.floor(Math.random() * 100));
+  Promise.all([
+    getRandomUser(),
+    randomFoxPicture(),
+    getAge(),
+    getStarWarsPerson(Math.floor(Math.random() * 100)),
+    getDadJoke(),
+  ]).then(() => {
+    printNewFox();
+  });
   console.log("Fox complete!");
 }
 
-// Reset fox info so appended data is removed
+// Reset fox info so appended data is removed (only joke is appended, rest is changed)
 function resetFox() {
   jokeDisplay.innerHTML = "";
+  fullDisplay.classList.add("d-none");
+  spinner.classList.remove("d-none");
 }
 
 // Get age (random number)
 const getAge = () => {
-  let age = Math.floor(Math.random() * 10);
-  if (age === 0) {
-    age = "6 months";
-  }
-  ageDisplay.innerHTML = age;
+  age = Math.floor(Math.random() * 10);
 };
 
 // Get random name from Random User API
-const getRandomName = async () => {
+const getRandomUser = async () => {
   try {
     const res = await axios.get(`https://randomuser.me/api/`);
-    const firstName = res.data.results[0].name.first;
-    const lastName = res.data.results[0].name.last;
-    mainDisplay.innerHTML = `Hi, my name is ${firstName}!`;
-    nameDisplay.innerHTML = `${firstName} ${lastName}`;
-    const newCountry = res.data.results[0].location.country;
-    placeDisplay.innerHTML = newCountry;
+    firstName = res.data.results[0].name.first;
+    lastName = res.data.results[0].name.last;
+    country = res.data.results[0].location.country;
   } catch (e) {
     console.log("ERROR", e);
     characterDisplay.innerHTML = "No name";
@@ -60,11 +70,10 @@ const getRandomName = async () => {
 const getStarWarsPerson = async (id) => {
   try {
     const res = await axios.get(`https://swapi.dev/api/people/${id}/`);
-    const newCharacter = res.data.name;
-    characterDisplay.innerHTML = `<a href = "https://starwars.fandom.com/wiki/${newCharacter}" target = "_blank"> ${newCharacter}</a>`;
+    starWarsCharacter = res.data.name;
   } catch (e) {
     console.log("ERROR", e);
-    characterDisplay.innerHTML = "Not a Star Wars fan";
+    starWarsCharacter = "not a fan";
   }
 };
 
@@ -72,9 +81,7 @@ const getStarWarsPerson = async (id) => {
 const randomFoxPicture = async () => {
   try {
     const res = await axios.get("https://randomfox.ca/floof/?ref=apilist.fun");
-    const newFox = res.data.image;
-    img.src = newFox;
-    return newFox;
+    foxImg = res.data.image;
   } catch (e) {
     return "error", e;
   }
@@ -85,10 +92,7 @@ const getDadJoke = async () => {
   try {
     const config = { headers: { Accept: "application/json" } };
     const res = await axios.get("https://icanhazdadjoke.com/", config);
-    const newJoke = res.data.joke;
-    const ul = jokeDisplay.appendChild(document.createElement("ul"));
-    const li = ul.appendChild(document.createElement("li"));
-    li.innerHTML = newJoke;
+    joke = res.data.joke;
   } catch (e) {
     return "NO JOKES AVAILABLE! SORRY :(";
   }
@@ -113,3 +117,25 @@ const randomJokeSpanish = async () => {
     return "error", e;
   }
 };
+
+// Function that prints all data at once when it's fulfilled
+function printNewFox() {
+  mainDisplay.innerHTML = `Hi, my name is ${firstName}!`;
+  nameDisplay.innerHTML = `${firstName} ${lastName}`;
+  placeDisplay.innerHTML = country;
+  img.src = foxImg;
+  if (age === 0) {
+    age = "6 months";
+  }
+  ageDisplay.innerHTML = age;
+  if (starWarsCharacter === "not a fan") {
+    characterDisplay.innerHTML = "Not a Star Wars fan";
+  } else {
+    characterDisplay.innerHTML = `<a href = "https://starwars.fandom.com/wiki/${starWarsCharacter}" target = "_blank"> ${starWarsCharacter}</a>`;
+  }
+  const ul = jokeDisplay.appendChild(document.createElement("ul"));
+  const li = ul.appendChild(document.createElement("li"));
+  li.innerHTML = joke;
+  fullDisplay.classList.remove("d-none");
+  spinner.classList.add("d-none");
+}
