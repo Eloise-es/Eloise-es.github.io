@@ -1,6 +1,6 @@
 // Declare document elements
 const form = document.querySelector("#searchForm");
-const main = document.querySelector("main");
+const results = document.querySelector("#results");
 
 // Add event listener to form
 form.addEventListener("submit", async function (e) {
@@ -19,7 +19,7 @@ function addImages(shows) {
     if (result.show.image) {
       const img = document.createElement("img");
       img.src = result.show.image.medium;
-      main.appendChild(img);
+      results.appendChild(img);
     }
   });
 }
