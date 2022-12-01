@@ -10,5 +10,17 @@ form.addEventListener("submit", async function (e) {
     `https://api.tvmaze.com/search/shows?q=${searchTerm}`
   );
   console.log(res);
+  addImages(res.data);
   form.elements.query.value = "";
 });
+
+// Iterate through results to append images of shows
+function addImages(shows) {
+  shows.forEach((result) => {
+    if (result.show.image) {
+      const img = document.createElement("img");
+      img.src = result.show.image.medium;
+      main.appendChild(img);
+    }
+  });
+}
