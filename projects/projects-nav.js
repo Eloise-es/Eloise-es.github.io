@@ -91,6 +91,14 @@ const navbar = `
                 Random Fox Generator
               </a>
               </li>
+              <li>
+               <a
+                 class="dropdown-item"
+                 href="https://www.eloise.es/projects/tv-search-app"
+               >
+                 TV Show Search
+                </a>
+               </li>
             </ul>
           </div>
           <a class="nav-link" href="https://www.eloise.es/teaching">
