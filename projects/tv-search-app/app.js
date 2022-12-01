@@ -5,6 +5,7 @@ const results = document.querySelector("#results");
 // Add event listener to form
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
+  removeImages();
   const searchTerm = form.elements.query.value;
   const config = { params: { q: searchTerm } };
   const res = await axios.get("https://api.tvmaze.com/search/shows?q=", config);
@@ -22,4 +23,12 @@ function addImages(shows) {
       results.appendChild(img);
     }
   });
+}
+// Remove all images from the results section
+function removeImages() {
+  var first = results.firstElementChild;
+  while (first) {
+    first.remove();
+    first = results.firstElementChild;
+  }
 }
