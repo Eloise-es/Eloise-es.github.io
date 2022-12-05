@@ -18,14 +18,30 @@ form.addEventListener("submit", async function (e) {
 function addImages(shows) {
   shows.forEach((result) => {
     if (result.show.image) {
+      // Create card
+      const card = document.createElement("div");
+      card.classList.add("card", "text-bg-dark", "p-0", "m-2");
+      card.style = "width: 14rem;";
+      // Create img
       const img = document.createElement("img");
+      img.classList.add("card-img");
       img.src = result.show.image.medium;
-      results.appendChild(img);
-      img.onmouseenter = function () {
-        img.style = "opacity: 30%; cursor: pointer;";
+      // Create card img overlay
+      const overlay = document.createElement("div");
+      overlay.classList.add("card-img-overlay");
+      // Append img and overlay to card
+      card.appendChild(img);
+      card.appendChild(overlay);
+      // Append card to results
+      results.appendChild(card);
+      // Hover effects - need both onmouseenter and onmouseout events
+      card.onmouseenter = function () {
+        img.style.opacity = 0.3;
+        card.style.cursor = "pointer";
       };
-      img.onmouseout = function () {
-        img.style = "opacity: 100%; cursor: auto;";
+      card.onmouseout = function () {
+        img.style.opacity = 1;
+        card.style.cursor = "auto";
       };
     }
   });
