@@ -21,7 +21,7 @@ function addImages(shows) {
       // Create card
       const card = document.createElement("div");
       card.classList.add("card", "text-bg-dark", "p-0", "m-2");
-      card.style = "width: 14rem;";
+      card.style.width = "14rem";
       // Create img
       const img = document.createElement("img");
       img.classList.add("card-img");
@@ -35,7 +35,7 @@ function addImages(shows) {
       // Append card to results
       results.appendChild(card);
       // Hover effects - need both onmouseenter and onmouseout events
-      card.onmouseenter = function () {
+      card.onmouseover = function () {
         img.style.opacity = 0.3;
         card.style.cursor = "pointer";
       };
