@@ -50,7 +50,24 @@
         <input type="text" placeholder="TV show title" name="query" />
         <button>Search</button>
       </form>
-      <section class="container my-3" id="results"></section>
+      <section class="container my-3" id="results">
+        <div class="card text-bg-dark">
+          <img
+            src="https://static.tvmaze.com/uploads/images/medium_portrait/22/55916.jpg"
+            class="card-img"
+            id="tv-result-img"
+          />
+          <div class="card-img-overlay d-none" id="tv-result-description">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
     <script src="app.js"></script>
