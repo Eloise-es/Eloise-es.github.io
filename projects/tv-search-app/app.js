@@ -29,6 +29,11 @@ function addImages(shows) {
       // Create card img overlay
       const overlay = document.createElement("div");
       overlay.classList.add("card-img-overlay");
+      // Create card title and append to overlay
+      const cardTitle = document.createElement("h5");
+      cardTitle.classList.add("card-title");
+      cardTitle.innerHTML = "TV show name";
+      overlay.appendChild(cardTitle);
       // Append img and overlay to card
       card.appendChild(img);
       card.appendChild(overlay);
@@ -38,10 +43,12 @@ function addImages(shows) {
       card.onmouseover = function () {
         img.style.opacity = 0.3;
         card.style.cursor = "pointer";
+        overlay.style.display = "block";
       };
       card.onmouseout = function () {
         img.style.opacity = 1;
         card.style.cursor = "auto";
+        overlay.style.display = "none";
       };
     }
   });
