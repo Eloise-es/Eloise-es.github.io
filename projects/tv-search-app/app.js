@@ -21,6 +21,12 @@ function addImages(shows) {
       const img = document.createElement("img");
       img.src = result.show.image.medium;
       results.appendChild(img);
+      img.onmouseenter = function () {
+        img.style = "opacity: 30%; cursor: pointer;";
+      };
+      img.onmouseout = function () {
+        img.style = "opacity: 100%; cursor: auto;";
+      };
     }
   });
 }
