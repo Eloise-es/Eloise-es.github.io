@@ -29,10 +29,11 @@ function addImages(shows) {
       // Create card img overlay
       const overlay = document.createElement("div");
       overlay.classList.add("card-img-overlay");
+      overlay.style.display = "none";
       // Create card title and append to overlay
       const cardTitle = document.createElement("h5");
       cardTitle.classList.add("card-title");
-      cardTitle.innerHTML = "TV show name";
+      cardTitle.innerHTML = result.show.name;
       overlay.appendChild(cardTitle);
       // Append img and overlay to card
       card.appendChild(img);
