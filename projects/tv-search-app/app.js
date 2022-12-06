@@ -31,16 +31,19 @@ function addImages(shows) {
       overlay.classList.add("card-img-overlay");
       overlay.style.display = "none";
 
-      // Card title (name)
+      // Card title (name + year)
       const cardTitle = document.createElement("h5");
       cardTitle.classList.add("card-title");
-      cardTitle.innerHTML = result.show.name;
+      const year = result.show.premiered.substring(0, 4);
+      cardTitle.innerHTML = `${result.show.name} (${year})`;
+
       // Card text (summary)
       const cardText = document.createElement("small");
       cardText.classList.add("card-text");
       if (result.show.summary) {
         cardText.innerHTML = truncateSummary(result.show.summary, 150);
       }
+
       // Link to read more
       const cardLink = document.createElement("a");
       cardLink.innerText = "(more info)";
@@ -66,6 +69,7 @@ function addImages(shows) {
         cardBadgeLanguage.innerHTML += result.show.language;
       }
       cardBadges.appendChild(cardBadgeLanguage);
+
       // Genre badge
       if (result.show.genres) {
         for (let genre of result.show.genres) {
@@ -75,6 +79,7 @@ function addImages(shows) {
           cardBadges.appendChild(cardBadgeGenre);
         }
       }
+
       // Type badge
       const cardBadgeType = document.createElement("span");
       cardBadgeType.classList.add("badge", "text-bg-secondary", "m-1");
