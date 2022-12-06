@@ -44,13 +44,13 @@ function addImages(shows) {
       if (result.show.genres) {
         for (let genre of result.show.genres) {
           const cardGenre = document.createElement("span");
-          cardGenre.classList.add("badge", "text-bg-primary", "mx-1");
+          cardGenre.classList.add("badge", "text-bg-primary", "m-1");
           cardGenre.innerHTML = genre;
           cardBadges.appendChild(cardGenre);
         }
       }
       const cardBadge = document.createElement("span");
-      cardBadge.classList.add("badge", "text-bg-secondary", "mx-1");
+      cardBadge.classList.add("badge", "text-bg-secondary", "m-1");
       cardBadge.innerHTML = result.show.type;
       cardBadges.appendChild(cardBadge);
 
