@@ -44,10 +44,3 @@ main {
   margin-right: auto;
   margin-bottom: auto;
 }
-/* For TV app */
-#tv-result-img:hover {
-  opacity: 30%;
-}
-#tv-result-description:hover {
-  display: block;
-}
