@@ -30,6 +30,7 @@ function addImages(shows) {
       const overlay = document.createElement("div");
       overlay.classList.add("card-img-overlay");
       overlay.style.display = "none";
+
       // Card title (name)
       const cardTitle = document.createElement("h5");
       cardTitle.classList.add("card-title");
@@ -38,9 +39,25 @@ function addImages(shows) {
       const cardText = document.createElement("p");
       cardText.classList.add("card-text");
       cardText.innerHTML = truncateString(result.show.summary, 180);
+      // Card badges (genre)
+      const cardBadges = document.createElement("div");
+      if (result.show.genres) {
+        for (let genre of result.show.genres) {
+          const cardGenre = document.createElement("span");
+          cardGenre.classList.add("badge", "text-bg-primary", "mx-1");
+          cardGenre.innerHTML = genre;
+          cardBadges.appendChild(cardGenre);
+        }
+      }
+      const cardBadge = document.createElement("span");
+      cardBadge.classList.add("badge", "text-bg-secondary", "mx-1");
+      cardBadge.innerHTML = result.show.type;
+      cardBadges.appendChild(cardBadge);
+
       // Append card contents to overlay
       overlay.appendChild(cardTitle);
       overlay.appendChild(cardText);
+      overlay.appendChild(cardBadges);
       // Append img and overlay to card
       card.appendChild(img);
       card.appendChild(overlay);
