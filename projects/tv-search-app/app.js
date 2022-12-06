@@ -78,8 +78,8 @@ function truncateString(string, limit) {
   }
 }
 // API notes:
-// Summary = results.show.summary
-// Language = results.show.language
-// Country = results.show.network.country.name
-// Genre = results.show.type
-// IMDb page = `https://www.imdb.com/title/${imdbCode}` results.show.externals.imdb
+// Summary = result.show.summary
+// Language = result.show.language
+// Country = result.show.network.country.name
+// Genre = 1. result.show.genres[0] -- if empty, use result.show.type
+// IMDb page = `https://www.imdb.com/title/${imdbCode}` result.show.externals.imdb
