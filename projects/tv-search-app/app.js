@@ -54,6 +54,18 @@ function addImages(shows) {
 
       // Card badges (country, genre, type)
       const cardBadges = document.createElement("div");
+      // Language + Country badge
+      const cardBadgeLanguage = document.createElement("span");
+      cardBadgeLanguage.classList.add("badge", "text-bg-danger", "m-1");
+      if (result.show.network) {
+        cardBadgeLanguage.innerHTML += `${getFlagEmoji(
+          result.show.network.country.code
+        )} `;
+      }
+      if (result.show.language) {
+        cardBadgeLanguage.innerHTML += result.show.language;
+      }
+      cardBadges.appendChild(cardBadgeLanguage);
       // Genre badge
       if (result.show.genres) {
         for (let genre of result.show.genres) {
@@ -113,6 +125,14 @@ function truncateSummary(string, limit) {
   } else {
     return string + " ";
   }
+}
+// Country flag emoji by Jorik https://dev.to/jorik/country-code-to-flag-emoji-a21
+function getFlagEmoji(countryCode) {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split("")
+    .map((char) => 127397 + char.charCodeAt());
+  return String.fromCodePoint(...codePoints);
 }
 // API notes:
 // Summary = result.show.summary
