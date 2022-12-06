@@ -45,11 +45,53 @@
 
   <body>
     <nav></nav>
-    <main class="text-center">
+    <main class="text-center container">
       <h1>TV Show Search</h1>
-      <form id="searchForm">
-        <input type="text" placeholder="TV show title" name="query" />
-        <button>Search</button>
+      <form class="row justify-content-center g-2" id="searchForm">
+        <div class="col-auto">
+          <input
+            type="text"
+            placeholder="TV show title"
+            name="query"
+            class="form-control"
+          />
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-dark">Search</button>
+        </div>
+        <div class="col-auto">
+          <button
+            type="button"
+            class="btn btn-light"
+            data-bs-toggle="collapse"
+            data-bs-target="#infoTab"
+            aria-expanded="false"
+            aria-controls="infoTab"
+          >
+            <i class="bi bi-info-circle"></i>
+          </button>
+        </div>
+        <div class="collapse" id="infoTab">
+          <div class="col mx-5">
+            <div class="card card-body">
+              <p class="card-text mb-1">
+                <b>Use the search bar to find a TV show.</b> <br />
+                Up to 10 results will appear, with the best match first. Hover
+                (on desktop) or tap (on mobile) to find out more about each
+                show. <br />
+                I chose to only show results with pictures, so if what you're
+                looking for doesn't show up, it's probably because there is no
+                picture available, sorry!
+              </p>
+              <small
+                >This app uses the
+                <a href="https://www.tvmaze.com/api" target="_blank"
+                  >TV Maze API</a
+                >.</small
+              >
+            </div>
+          </div>
+        </div>
       </form>
       <section class="container my-3">
         <div class="row justify-content-center" id="results"></div>
