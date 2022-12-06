@@ -88,10 +88,9 @@ const projects = [
   },
   {
     name: "TV Show Search",
-    description:
-      "Search for TV shows and see images of them (yes, just images... will be improved soon!)",
+    description: "Search for TV shows and see useful information about them.",
     href: "tv-search-app/index.html",
-    date: "1st December 2022",
+    date: "1st December 2022, updated 6th December 2022",
     topics: ["Bootstrap", "JavaScript", "APIs"],
     source: `<a href="https://www.udemy.com/course/the-web-developer-bootcamp/"
                 target="_blank"
