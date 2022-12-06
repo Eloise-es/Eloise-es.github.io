@@ -29,7 +29,6 @@ function addImages(shows) {
       // Create card img overlay
       const overlay = document.createElement("div");
       overlay.classList.add("card-img-overlay");
-      overlay.style.display = "none";
 
       // Card title (name + year)
       const cardTitle = document.createElement("h5");
@@ -101,14 +100,10 @@ function addImages(shows) {
       // Append card to results
       results.appendChild(card);
       // Hover effects - need both onmouseenter and onmouseout events
-      card.onmouseover = function () {
-        img.style.opacity = 0.3;
-        overlay.style.display = "block";
-      };
-      card.onmouseout = function () {
-        img.style.opacity = 1;
-        overlay.style.display = "none";
-      };
+      // card.onmouseout = function () {
+      //   img.style.opacity = 1;
+      //   overlay.style.display = "none";
+      // };
     }
   });
 }

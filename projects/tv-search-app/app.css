@@ -1,0 +1,10 @@
+.card-img-overlay {
+  display: none;
+}
+
+.card:hover .card-img {
+  opacity: 0.3;
+}
+.card:hover .card-img-overlay {
+  display: block;
+}
