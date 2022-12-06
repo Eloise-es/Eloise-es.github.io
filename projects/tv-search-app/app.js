@@ -41,6 +41,17 @@ function addImages(shows) {
       if (result.show.summary) {
         cardText.innerHTML = truncateString(result.show.summary, 180);
       }
+      // Link to read more
+      const cardLink = document.createElement("a");
+      cardLink.innerText = "Read more";
+      if (result.show.externals.imdb) {
+        cardLink.href = `https://www.imdb.com/title/${result.show.externals.imdb}`;
+        cardLink.target = `_blank`;
+      } else {
+        cardLink.href = result.show.url;
+        cardLink.target = `_blank`;
+      }
+
       // Card badges (genre)
       const cardBadges = document.createElement("div");
       if (result.show.genres) {
@@ -59,6 +70,7 @@ function addImages(shows) {
       // Append card contents to overlay
       overlay.appendChild(cardTitle);
       overlay.appendChild(cardText);
+      overlay.appendChild(cardLink);
       overlay.appendChild(cardBadges);
       // Append img and overlay to card
       card.appendChild(img);
