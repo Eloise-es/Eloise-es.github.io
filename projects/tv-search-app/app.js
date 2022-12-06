@@ -102,7 +102,7 @@ function addImages(shows) {
       // First check if device can hover
       if (matchMedia("(hover: hover)").matches) {
         card.onmouseover = function () {
-          img.style.opacity = 0.3;
+          img.style.opacity = 0.2;
           overlay.style.display = "block";
         };
         card.onmouseout = function () {
