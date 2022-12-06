@@ -38,7 +38,9 @@ function addImages(shows) {
       // Card text (summary)
       const cardText = document.createElement("p");
       cardText.classList.add("card-text");
-      cardText.innerHTML = truncateString(result.show.summary, 180);
+      if (result.show.summary) {
+        cardText.innerHTML = truncateString(result.show.summary, 180);
+      }
       // Card badges (genre)
       const cardBadges = document.createElement("div");
       if (result.show.genres) {
