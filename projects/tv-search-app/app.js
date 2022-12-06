@@ -52,20 +52,22 @@ function addImages(shows) {
         cardLink.target = `_blank`;
       }
 
-      // Card badges (genre)
+      // Card badges (country, genre, type)
       const cardBadges = document.createElement("div");
+      // Genre badge
       if (result.show.genres) {
         for (let genre of result.show.genres) {
-          const cardGenre = document.createElement("span");
-          cardGenre.classList.add("badge", "text-bg-primary", "m-1");
-          cardGenre.innerHTML = genre;
-          cardBadges.appendChild(cardGenre);
+          const cardBadgeGenre = document.createElement("span");
+          cardBadgeGenre.classList.add("badge", "text-bg-primary", "m-1");
+          cardBadgeGenre.innerHTML = genre;
+          cardBadges.appendChild(cardBadgeGenre);
         }
       }
-      const cardBadge = document.createElement("span");
-      cardBadge.classList.add("badge", "text-bg-secondary", "m-1");
-      cardBadge.innerHTML = result.show.type;
-      cardBadges.appendChild(cardBadge);
+      // Type badge
+      const cardBadgeType = document.createElement("span");
+      cardBadgeType.classList.add("badge", "text-bg-secondary", "m-1");
+      cardBadgeType.innerHTML = result.show.type;
+      cardBadges.appendChild(cardBadgeType);
 
       // Append card contents to overlay
       overlay.appendChild(cardTitle);
