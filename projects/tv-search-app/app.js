@@ -39,11 +39,11 @@ function addImages(shows) {
       const cardText = document.createElement("small");
       cardText.classList.add("card-text");
       if (result.show.summary) {
-        cardText.innerHTML = truncateString(result.show.summary, 180);
+        cardText.innerHTML = truncateSummary(result.show.summary, 150);
       }
       // Link to read more
       const cardLink = document.createElement("a");
-      cardLink.innerText = "Read more";
+      cardLink.innerText = "(more info)";
       if (result.show.externals.imdb) {
         cardLink.href = `https://www.imdb.com/title/${result.show.externals.imdb}`;
         cardLink.target = `_blank`;
@@ -69,8 +69,8 @@ function addImages(shows) {
 
       // Append card contents to overlay
       overlay.appendChild(cardTitle);
+      cardText.appendChild(cardLink);
       overlay.appendChild(cardText);
-      overlay.appendChild(cardLink);
       overlay.appendChild(cardBadges);
       // Append img and overlay to card
       card.appendChild(img);
@@ -99,11 +99,17 @@ function removeImages() {
 }
 
 // Cuts the end of a string to a specified length and replaces end with ... (so it fits)
-function truncateString(string, limit) {
+// Also removes <p> tags that are written into the API result
+function truncateSummary(string, limit) {
+  // Check for and remove first HTML tag
+  if (string[0] === "<") {
+    string = string.substring(3, string.length - 4);
+  }
+  // Cut down to limit and add ...
   if (string.length > limit) {
-    return string.substring(0, limit) + "...";
+    return string.substring(0, limit) + "... ";
   } else {
-    return string;
+    return string + " ";
   }
 }
 // API notes:
