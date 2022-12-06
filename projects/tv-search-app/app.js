@@ -30,11 +30,17 @@ function addImages(shows) {
       const overlay = document.createElement("div");
       overlay.classList.add("card-img-overlay");
       overlay.style.display = "none";
-      // Create card title and append to overlay
+      // Card title (name)
       const cardTitle = document.createElement("h5");
       cardTitle.classList.add("card-title");
       cardTitle.innerHTML = result.show.name;
+      // Card text (summary)
+      const cardText = document.createElement("p");
+      cardText.classList.add("card-text");
+      cardText.innerHTML = truncateString(result.show.summary, 180);
+      // Append card contents to overlay
       overlay.appendChild(cardTitle);
+      overlay.appendChild(cardText);
       // Append img and overlay to card
       card.appendChild(img);
       card.appendChild(overlay);
@@ -62,3 +68,18 @@ function removeImages() {
     first = results.firstElementChild;
   }
 }
+
+// Cuts the end of a string to a specified length and replaces end with ... (so it fits)
+function truncateString(string, limit) {
+  if (string.length > limit) {
+    return string.substring(0, limit) + "...";
+  } else {
+    return string;
+  }
+}
+// API notes:
+// Summary = results.show.summary
+// Language = results.show.language
+// Country = results.show.network.country.name
+// Genre = results.show.type
+// IMDb page = `https://www.imdb.com/title/${imdbCode}` results.show.externals.imdb
