@@ -68,12 +68,10 @@ function addImages(shows) {
       // Hover effects - need both onmouseenter and onmouseout events
       card.onmouseover = function () {
         img.style.opacity = 0.3;
-        card.style.cursor = "pointer";
         overlay.style.display = "block";
       };
       card.onmouseout = function () {
         img.style.opacity = 1;
-        card.style.cursor = "auto";
         overlay.style.display = "none";
       };
     }
