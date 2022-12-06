@@ -13,7 +13,7 @@ This portfolio contains all the projects I've completed so far, as well as an ab
 
 ### Projects already on this site...
 *   🍌  Banana Quiz (18th April, first full coding project)
-*   🔢  Number guessing game (3rd Oct, no HTML/CSS, only JS to practise if statements and for loops - to be improved in Nov)
+*   🔢  Number guessing game
 *   ✅  To do list mini app
 *   🥚  Pokemon list using JavaScript
 *   🌈  Random colour generator
