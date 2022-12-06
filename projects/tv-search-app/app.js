@@ -36,7 +36,7 @@ function addImages(shows) {
       cardTitle.classList.add("card-title");
       cardTitle.innerHTML = result.show.name;
       // Card text (summary)
-      const cardText = document.createElement("p");
+      const cardText = document.createElement("small");
       cardText.classList.add("card-text");
       if (result.show.summary) {
         cardText.innerHTML = truncateString(result.show.summary, 180);
