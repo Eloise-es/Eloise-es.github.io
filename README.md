@@ -19,6 +19,7 @@ This portfolio contains all the projects I've completed so far, as well as an ab
 *   🌈  Random colour generator
 *   🏓  Ping pong score keeper
 *   🦊  Random fox generator
+*   📺  TV Show search app
 
 
 ### Future project ideas...
@@ -27,7 +28,7 @@ This portfolio contains all the projects I've completed so far, as well as an ab
 *   🔎  Multi-language dictionary, showing translations and examples and possibly etymology 
 *   ⏱  Time sheet, to track working hours and hours spent on various projects
 *   📂  Text de-formatter, takes text from PDF etc and removes extra line breaks except where there are real paragraph breaks
-*   📺  Home display screen showing weather, events, reminders etc, for use in the home
+*   🌦️  Home display screen showing weather, events, reminders etc, for use in the home
 
 ### Built with... 
 <p align="left">
