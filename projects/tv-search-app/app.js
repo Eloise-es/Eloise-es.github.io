@@ -53,16 +53,11 @@ function addImages(shows) {
       // Link to read more
       const cardLink = document.createElement("a");
       cardLink.innerText = "(more info)";
-      if (result.show.externals.imdb) {
-        cardLink.href = `https://www.imdb.com/title/${result.show.externals.imdb}`;
-        cardLink.target = `_blank`;
-      } else {
-        cardLink.href = result.show.url;
-        cardLink.target = `_blank`;
-      }
+      addLink(result, cardLink);
 
       // Card badges (country, genre, type)
       const cardBadges = document.createElement("div");
+
       // Language + Country badge
       const cardBadgeLanguage = document.createElement("span");
       cardBadgeLanguage.classList.add("badge", "text-bg-danger", "m-1");
@@ -102,8 +97,10 @@ function addImages(shows) {
       card.appendChild(overlay);
       // Append card to results
       results.appendChild(card);
-      // Hover effects - need both onmouseenter and onmouseout events
-      if (matchMedia("hover: hover")) {
+
+      // Hover effects - need both onmouseover and onmouseout events
+      // First check if device can hover
+      if (matchMedia("(hover: hover)").matches) {
         card.onmouseover = function () {
           img.style.opacity = 0.3;
           overlay.style.display = "block";
@@ -155,6 +152,16 @@ function getFlagEmoji(countryCode) {
     .split("")
     .map((char) => 127397 + char.charCodeAt());
   return String.fromCodePoint(...codePoints);
+}
+// Function to add link to card (moved into function as it got long)
+function addLink(result, cardLink) {
+  if (result.show.externals.imdb) {
+    cardLink.href = `https://www.imdb.com/title/${result.show.externals.imdb}`;
+    cardLink.target = `_blank`;
+  } else {
+    cardLink.href = result.show.url;
+    cardLink.target = `_blank`;
+  }
 }
 // API notes:
 // Summary = result.show.summary
