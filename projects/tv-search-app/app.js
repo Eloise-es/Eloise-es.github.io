@@ -34,8 +34,12 @@ function addImages(shows) {
       // Card title (name + year)
       const cardTitle = document.createElement("h5");
       cardTitle.classList.add("card-title");
-      const year = result.show.premiered.substring(0, 4);
-      cardTitle.innerHTML = `${result.show.name} (${year})`;
+      if (result.show.premiered) {
+        const year = result.show.premiered.substring(0, 4);
+        cardTitle.innerHTML = `${result.show.name} (${year})`;
+      } else {
+        cardTitle.innerHTML = result.show.name;
+      }
 
       // Card text (summary)
       const cardText = document.createElement("small");
