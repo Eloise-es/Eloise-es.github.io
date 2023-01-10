@@ -29,6 +29,7 @@ This portfolio contains all the projects I've completed so far, as well as an ab
 *   ⏱  Time sheet, to track working hours and hours spent on various projects
 *   📂  Text de-formatter, takes text from PDF etc and removes extra line breaks except where there are real paragraph breaks
 *   🌦️  Home display screen showing weather, events, reminders etc, for use in the home
+*   🥘  Mini recipe website with some of my favourite recipes
 
 ### Built with... 
 <p align="left">
