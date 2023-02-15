@@ -103,7 +103,7 @@ const projects = [
 const container = document.querySelector("#projectsContainer");
 
 // Iterate over projects in array, adding cards with details
-for (project of projects) {
+for (let project of projects) {
   const cardContents = `<div class="col my-2">
             <div class="card h-100 text-bg-light">
             <a href="${project.href}"
