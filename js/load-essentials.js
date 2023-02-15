@@ -1,3 +1,39 @@
+const headContents = `<link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../css/eloise.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-RZ7KXB2VMR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-RZ7KXB2VMR");
+  </script>`;
 const navbar = `
     <div class="container-fluid">
       <a class="navbar-brand" href="https://www.eloise.es">
@@ -22,9 +58,9 @@ const navbar = `
           <a class="nav-link" href="https://www.eloise.es/about-me">
             About me
           </a>
-          <div class="nav-item dropdown active">
+          <div class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle active"
+              class="nav-link dropdown-toggle"
               href="https://www.eloise.es/projects"
               role="button"
               data-bs-toggle="dropdown"
@@ -162,9 +198,12 @@ const footerContents = `
         <a class="text-white" href="https://www.eloise.es/about-me">Eloise Salmon</a>
       </div>
       <!-- Copyright -->`;
+const head = document.getElementById("myHead");
 const footer = document.querySelector("footer");
 const nav = document.querySelector("nav");
 
+// Add head contents
+head.insertAdjacentHTML("afterend", headContents);
 // Add classes to nav then insert navbar contents
 nav.classList.add("navbar", "navbar-expand-md", "sticky-top");
 nav.insertAdjacentHTML("afterbegin", navbar);
