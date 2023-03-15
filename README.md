@@ -30,6 +30,7 @@ This portfolio contains all the projects I've completed so far, as well as an ab
 *   📂  Text de-formatter, takes text from PDF etc and removes extra line breaks except where there are real paragraph breaks
 *   🌦️  Home display screen showing weather, events, reminders etc, for use in the home
 *   🥘  Mini recipe website with some of my favourite recipes
+*   🚗  Car comparison site, where you add details of the cars and it compares their cost over time
 
 ### Built with... 
 <p align="left">
