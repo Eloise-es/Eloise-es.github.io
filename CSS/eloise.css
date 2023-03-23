@@ -43,7 +43,14 @@ a {
 }
 
 .home-page {
-  background-color: mistyrose;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("../images/rainbow.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 }
 
 .teaching-page {
