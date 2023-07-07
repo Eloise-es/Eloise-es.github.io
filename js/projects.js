@@ -111,6 +111,19 @@ const projects = [
     img: "../images/yelp-camp.jpg",
     imgAltTxt: "Yelp Camp screenshot",
   },
+  {
+    name: "Animal Generator",
+    description:
+      "My first React app, built to learn about useState and events in React.",
+    href: "https://react-animals-eloise.onrender.com",
+    date: "7th July 2023",
+    topics: ["React", "JavaScript", "JSX"],
+    source: `<a href="https://www.udemy.com/course/react-redux"
+                target="_blank"
+                >Modern React with Redux</a>`,
+    img: "../images/react-animals.jpg",
+    imgAltTxt: "Animal generator screenshot",
+  },
 ];
 // Select container that cards go into
 const container = document.querySelector("#projectsContainer");
