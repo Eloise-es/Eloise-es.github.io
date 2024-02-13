@@ -1,0 +1,43 @@
+#icons {
+	display: flex;
+	justify-content: center;
+}
+
+#icons .icon img {
+	width: 36px;
+	height: 36px;
+	margin: 10px;
+	transition: transform 0.3s ease-in-out;
+}
+
+.icon {
+	position: relative;
+}
+
+.icon img {
+	width: 36px;
+	height: 36px;
+}
+
+.icon span {
+	position: absolute;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	border-radius: 5px;
+	bottom: -40px; /* Plaats de pop-up onder de afbeelding */
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0; /* Standaard verborgen */
+	visibility: hidden; /* Standaard verborgen */
+	transition: opacity 0.3s, visibility 0.3s;
+}
+
+.icon:hover span {
+	opacity: 1; /* Maak de pop-up zichtbaar bij hover */
+	visibility: visible; /* Maak de pop-up zichtbaar bij hover */
+}
+
+.icon:hover img {
+	transform: scale(1.1);
+}

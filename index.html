@@ -1,145 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eloise Salmon - Home</title>
-    <link rel="stylesheet" href="CSS/bootstrap.css" />
-    <link rel="stylesheet" href="CSS/eloise.css" />
-    <link rel="stylesheet" href="CSS/bootstrap-icons.css" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="images/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="images/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="images/favicon/site.webmanifest" />
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-RZ7KXB2VMR"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Eloise Salmon - Home</title>
+		<link rel="stylesheet" href="CSS/bootstrap.css" />
+		<link rel="stylesheet" href="CSS/eloise.css" />
+		<link rel="stylesheet" href="CSS/bootstrap-icons.css" />
+		<link rel="stylesheet" href="CSS/icons.css" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="images/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="images/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="images/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="images/favicon/site.webmanifest" />
+	</head>
+	<!-- Google tag (gtag.js) -->
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-RZ7KXB2VMR"
+	></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
 
-    gtag("config", "G-RZ7KXB2VMR");
-  </script>
+		gtag("config", "G-RZ7KXB2VMR");
+	</script>
 
-  <!-- Body needs these for the footer to work -->
-  <body class="d-flex flex-column min-vh-100 home-page">
-    <!-- Nav bar -->
-    <nav class="navbar navbar-expand-md sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <h1>Eloise Salmon</h1>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="index.html">
-              Home
-            </a>
-            <a class="nav-link" href="about-me/index.html"> About me </a>
-            <a class="nav-link" href="projects/index.html"> Projects </a>
-            <a class="nav-link" href="teaching/index.html"> Teaching </a>
+	<!-- Body needs these for the footer to work -->
+	<body class="d-flex flex-column min-vh-100 home-page">
+		<!-- Nav bar -->
+		<nav class="navbar navbar-expand-md sticky-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">
+					<h1>Eloise Salmon</h1>
+				</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<div class="navbar-nav">
+						<a class="nav-link active" aria-current="page" href="index.html">
+							Home
+						</a>
+						<a class="nav-link" href="about-me/index.html"> About me </a>
+						<a class="nav-link" href="projects/index.html"> Projects </a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- Nav bar end -->
+		<section class="justify-content-center text-center mt-5">
+			<div class="d-grid gap-3 col-8 mx-auto">
+				<h1 class="display-3">Junior Full Stack Developer</h1>
+				<h1 class="display-6">The Hague</h1>
+				<p class="lead">
+					Welcome to my website! Click the links above to look around.
+				</p>
+				<div id="icons" class="row justify-content-center">
+					<div class="icon col p-0">
+            <img
+              src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/java-colored.svg"
+              width="36"
+              height="36"
+              alt="Java"
+            />
+            <span>Java</span>
           </div>
-        </div>
-      </div>
-    </nav>
-    <!-- Nav bar end -->
-    <section class="justify-content-center text-center mt-5">
-      <div class="d-grid gap-3 col-8 mx-auto">
-        <h1 class="display-3">Welcome to my website!</h1>
-        <p class="lead">Click the links above to look around.</p>
-      </div>
-    </section>
 
-    <!-- Footer START -->
-    <footer class="bg-light text-center text-white mt-auto">
-      <!-- Grid container -->
-      <div class="container p-3 pb-0">
-        <!-- Section: Social media -->
-        <section class="mb-3">
-          <!-- Linkedin -->
-          <a
-            class="btn text-white btn-floating m-1"
-            style="background-color: #0082ca"
-            href="https://www.linkedin.com/in/eloisesalmon/"
-            target="_blank"
-            role="button"
-            ><i class="bi bi-linkedin"></i
-          ></a>
-          <!-- Github -->
-          <a
-            class="btn text-white btn-floating m-1"
-            style="background-color: #333333"
-            href="https://github.com/Eloise-es"
-            target="_blank"
-            role="button"
-            ><i class="bi bi-github"></i
-          ></a>
-          <!-- Twitter -->
-          <a
-            class="btn text-white btn-floating m-1"
-            style="background-color: #55acee"
-            href="https://twitter.com/Eloise__ES"
-            target="_blank"
-            role="button"
-            ><i class="bi bi-twitter"></i
-          ></a>
+					<div class="icon col p-0">
+            <img
+              src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg"
+              width="36"
+              height="36"
+              alt="JavaScript"
+            />
+            <span>JavaScript</span>
+          </div>
 
-          <!-- Unsplash -->
-          <a
-            class="btn text-white btn-floating m-1"
-            style="background-color: gray"
-            href="https://unsplash.com/@eloise_es"
-            target="_blank"
-            role="button"
-            ><i class="bi bi-camera-fill"></i
-          ></a>
-        </section>
-        <!-- Section: Social media -->
-      </div>
-      <!-- Grid container -->
+			    <div class="icon col p-0">
+           <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" />
+           <span>HTML5</span>
+          </div>
 
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        This website was coded by
-        <a class="text-white" href="https://www.eloise.es/about-me"
-          >Eloise Salmon</a
-        >
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer END -->
+          <div class="icon col p-0">
+            <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="36" height="36" alt="CSS3" />
+            <span>CSS3</span>
+          </div>
 
-    <script src="js/bootstrap.bundle.js"></script>
-  </body>
+          <div class="icon col p-0">
+            <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg" width="36" height="36" alt="Bootstrap" />
+            <span>Bootstrap</span>
+          </div>
+
+          <div class="icon col p-0">
+            <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" width="36" height="36" alt="NodeJS" />
+            <span>NodeJS</span>
+          </div>
+
+          <div class="icon col p-0">
+            <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" />
+            <span>React</span>
+          </div>
+
+          <div class="icon col p-0">
+            <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg" width="36" height="36" alt="Angular" />
+            <span>Angular</span>
+          </div>
+
+          <div class="icon col p-0">
+            <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" width="36" height="36" alt="MySQL" />
+            <span>MySQL</span>
+          </div>
+
+          <div class="icon col p-0">
+            <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" width="36" height="36" alt="MongoDB" />
+            <span>MongoDB</span>
+          </div>
+
+          <div class="icon col p-0">
+            <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" width="36" height="36" alt="Git" />
+            <span>Git</span>
+          </div>
+				</p>
+			</div>
+		</section>
+
+		<!-- Footer START -->
+		<footer class="bg-light text-center text-white mt-auto">
+			<!-- Grid container -->
+			<div class="container p-3 pb-0">
+				<!-- Section: Social media -->
+				<section class="mb-3">
+					<!-- Linkedin -->
+					<a
+						class="btn text-white btn-floating m-1"
+						style="background-color: #0082ca"
+						href="https://www.linkedin.com/in/eloisesalmon/"
+						target="_blank"
+						role="button"
+						><i class="bi bi-linkedin"></i
+					></a>
+					<!-- Github -->
+					<a
+						class="btn text-white btn-floating m-1"
+						style="background-color: #333333"
+						href="https://github.com/Eloise-es"
+						target="_blank"
+						role="button"
+						><i class="bi bi-github"></i
+					></a>
+					<!-- Unsplash -->
+					<a
+						class="btn text-white btn-floating m-1"
+						style="background-color: gray"
+						href="https://unsplash.com/@eloise_es"
+						target="_blank"
+						role="button"
+						><i class="bi bi-camera-fill"></i
+					></a>
+				</section>
+				<!-- Section: Social media -->
+			</div>
+			<!-- Grid container -->
+
+			<!-- Copyright -->
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+				This website was coded by
+				<a class="text-white" href="https://www.eloise.es/about-me"
+					>Eloise Salmon</a
+				>
+			</div>
+			<!-- Copyright -->
+		</footer>
+		<!-- Footer END -->
+
+		<script src="js/bootstrap.bundle.js"></script>
+	</body>
 </html>
