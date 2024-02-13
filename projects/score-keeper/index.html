@@ -1,130 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Score Keeper</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Score Keeper</title>
 
-    <link rel="stylesheet" href="../../CSS/bootstrap.css" />
-    <link rel="stylesheet" href="../../CSS/bootstrap-icons.css" />
-    <link rel="stylesheet" href="../../CSS/eloise.css" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../../images/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../../images/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../../images/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="../../images/favicon/site.webmanifest" />
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-RZ7KXB2VMR"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+		<link rel="stylesheet" href="../../css/bootstrap.css" />
+		<link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+		<link rel="stylesheet" href="../../css/eloise.css" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../images/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../images/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../images/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../../images/favicon/site.webmanifest" />
+	</head>
+	<!-- Google tag (gtag.js) -->
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-RZ7KXB2VMR"
+	></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
 
-    gtag("config", "G-RZ7KXB2VMR");
-  </script>
+		gtag("config", "G-RZ7KXB2VMR");
+	</script>
 
-  <body>
-    <nav></nav>
-    <main>
-      <div class="card mt-3" style="width: 20rem">
-        <img
-          src="https://images.unsplash.com/photo-1611762348135-5b09d2f0390d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-          class="card-img-top"
-          alt="Ping pong bats and a ball"
-        />
-        <div class="card-body container">
-          <h5 class="card-title">Ping Pong Score Keeper</h5>
+	<body>
+		<nav></nav>
+		<main>
+			<div class="card mt-3" style="width: 20rem">
+				<img
+					src="https://images.unsplash.com/photo-1611762348135-5b09d2f0390d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+					class="card-img-top"
+					alt="Ping pong bats and a ball"
+				/>
+				<div class="card-body container">
+					<h5 class="card-title">Ping Pong Score Keeper</h5>
 
-          <h2 id="score">
-            <span id="scoreP1">0</span> to
-            <span id="scoreP2">0</span>
-            <span id="winnerIs"></span>
-          </h2>
-          <p class="card-text">Use the buttons below to keep score.</p>
-          <div class="row">
-            <select
-              name="playing-to"
-              id="playing-to"
-              class="form-select col m-2"
-            >
-              <option value="3">Playing to 3</option>
-              <option value="5">Playing to 5</option>
-              <option value="9">Playing to 9</option>
-              <option value="11">Playing to 11</option>
-            </select>
-            <button id="reset" class="btn btn-success col col-3 m-2">
-              Reset
-            </button>
-          </div>
-          <div class="row">
-            <button id="player-1" class="btn btn-primary col m-1">
-              +1 Player One
-            </button>
-            <button id="player-2" class="btn btn-danger col m-1">
-              +1 Player Two
-            </button>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div id="serveCountDisplay" class="text-start text-primary">
-            Serve 1 for Player One
-          </div>
-        </div>
-      </div>
-      <button
-        class="btn btn-light text-center my-2 w-100"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#formCollapse"
-        aria-expanded="false"
-        aria-controls="formCollapse"
-      >
-        Customise Names
-      </button>
-      <div class="collapse" id="formCollapse">
-        <div class="card my-1" style="width: 20rem">
-          <div class="card-body">
-            <form>
-              <label for="inputP1">Name of Player One:</label>
-              <input type="text" id="inputP1" class="w-100" />
-              <label for="inputP2">Name of Player Two:</label>
-              <input type="text" id="inputP2" class="w-100" />
-              <button
-                id="customiseNamesButton"
-                type="submit"
-                class="btn btn-light mt-2 w-100"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer></footer>
-    <script src="app.js"></script>
-    <script src="../../js/projects-nav.js"></script>
-    <script src="../../js/bootstrap.bundle.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  </body>
+					<h2 id="score">
+						<span id="scoreP1">0</span> to
+						<span id="scoreP2">0</span>
+						<span id="winnerIs"></span>
+					</h2>
+					<p class="card-text">Use the buttons below to keep score.</p>
+					<div class="row">
+						<select
+							name="playing-to"
+							id="playing-to"
+							class="form-select col m-2"
+						>
+							<option value="3">Playing to 3</option>
+							<option value="5">Playing to 5</option>
+							<option value="9">Playing to 9</option>
+							<option value="11">Playing to 11</option>
+						</select>
+						<button id="reset" class="btn btn-success col col-3 m-2">
+							Reset
+						</button>
+					</div>
+					<div class="row">
+						<button id="player-1" class="btn btn-primary col m-1">
+							+1 Player One
+						</button>
+						<button id="player-2" class="btn btn-danger col m-1">
+							+1 Player Two
+						</button>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div id="serveCountDisplay" class="text-start text-primary">
+						Serve 1 for Player One
+					</div>
+				</div>
+			</div>
+			<button
+				class="btn btn-light text-center my-2 w-100"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#formCollapse"
+				aria-expanded="false"
+				aria-controls="formCollapse"
+			>
+				Customise Names
+			</button>
+			<div class="collapse" id="formCollapse">
+				<div class="card my-1" style="width: 20rem">
+					<div class="card-body">
+						<form>
+							<label for="inputP1">Name of Player One:</label>
+							<input type="text" id="inputP1" class="w-100" />
+							<label for="inputP2">Name of Player Two:</label>
+							<input type="text" id="inputP2" class="w-100" />
+							<button
+								id="customiseNamesButton"
+								type="submit"
+								class="btn btn-light mt-2 w-100"
+							>
+								Submit
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer></footer>
+		<script src="app.js"></script>
+		<script src="../../js/projects-nav.js"></script>
+		<script src="../../js/bootstrap.bundle.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+	</body>
 </html>
