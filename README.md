@@ -4,7 +4,7 @@ eloise.es
 Portfolio website
 -------------------------------------
 
-This portfolio contains all the projects I've completed so far, as well as an about page and home page. I'm adding to it and updating it every week, sometimes a few times a week, as it's where I put to practice what I learn in [the course I'm following](https://www.udemy.com/course/the-web-developer-bootcamp/).
+This portfolio contains my coding projects, as well as an about page and home page. I am currently in the process of rebuilding it from scratch using React, so this version doesn't contain my latest projects.
 
 ### Pages built so far...
 *   🏠  Home page (very basic still, would like to improve this)
