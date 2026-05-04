@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rounders - The Complete Guide</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+			body {
+				font-family: "Poppins", sans-serif;
+			}
+			.gradient-bg {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			}
+			.card-hover {
+				transition: all 0.3s ease;
+			}
+			.card-hover:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			}
+			.fade-in {
+				animation: fadeIn 0.5s ease-in;
+			}
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			.quiz-option {
+				transition: all 0.2s ease;
+			}
+			.quiz-option:hover:not(:disabled) {
+				transform: scale(1.02);
+			}
+			.correct {
+				background-color: #10b981 !important;
+				color: white;
+				border-color: #10b981 !important;
+			}
+			.incorrect {
+				background-color: #ef4444 !important;
+				color: white;
+				border-color: #ef4444 !important;
+			}
+			.hidden {
+				display: none;
+			}
+			.show {
+				display: block;
+			}
+		</style>
+	</head>
+	<body class="bg-gray-50">
+		<!-- Navigation -->
+		<nav class="gradient-bg text-white p-4 sticky top-0 z-50 shadow-lg">
+			<div class="container mx-auto flex justify-between items-center">
+				<div class="flex items-center space-x-3">
+					<i class="fas fa-baseball-ball text-2xl"></i>
+					<h1 class="text-2xl font-bold">Rounders Guide</h1>
+				</div>
+				<div class="flex space-x-4">
+					<button
+						onclick="showSection('rules')"
+						class="nav-btn hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition"
+					>
+						Rules
+					</button>
+					<button
+						onclick="showSection('interactive')"
+						class="nav-btn hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition"
+					>
+						Interactive
+					</button>
+					<button
+						onclick="showSection('quiz')"
+						class="nav-btn hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition"
+					>
+						Quiz
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<section class="gradient-bg text-white py-20">
+			<div class="container mx-auto text-center">
+				<h2 class="text-5xl font-bold mb-4 fade-in">Master Rounders</h2>
+				<p class="text-xl mb-8 fade-in">
+					Your complete interactive guide to the classic British bat-and-ball
+					game
+				</p>
+				<div class="flex justify-center space-x-4">
+					<button
+						onclick="showSection('rules')"
+						class="bg-white text-purple-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105"
+					>
+						<i class="fas fa-book mr-2"></i>Learn Rules
+					</button>
+					<button
+						onclick="showSection('quiz')"
+						class="bg-yellow-400 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition transform hover:scale-105"
+					>
+						<i class="fas fa-question-circle mr-2"></i>Test Knowledge
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Rules Section -->
+		<section id="rules" class="container mx-auto py-12 px-4">
+			<h2 class="text-4xl font-bold text-center mb-8 text-gray-800">
+				Game Rules
+			</h2>
+
+			<!-- Before You Start Box -->
+			<div
+				class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8 rounded-lg"
+			>
+				<h3 class="text-xl font-bold mb-3 text-yellow-800">
+					<i class="fas fa-exclamation-triangle mr-2"></i>Before You Start -
+					Agree On:
+				</h3>
+				<ul class="text-yellow-900 space-y-2">
+					<li>
+						<strong>1. Innings format:</strong> Choose one: All batters bat once
+						/ 27 good balls / 3 outs / Whole team out
+					</li>
+					<li>
+						<strong>2. Good balls per batter:</strong> Usually 1, but can be 2-3
+						if feeling generous (applies to everyone)
+					</li>
+				</ul>
+			</div>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+				<div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+					<div class="text-purple-600 text-3xl mb-4">
+						<i class="fas fa-users"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Teams & Players</h3>
+					<ul class="text-gray-600 space-y-2">
+						<li>• Two teams of 6-15 players ideally</li>
+						<li>• Maximum 9 players on field at once</li>
+						<li>• One team bats, one fields</li>
+						<li>• Teams switch after each innings</li>
+						<li>• Usually played over 2 innings</li>
+					</ul>
+				</div>
+
+				<div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+					<div class="text-purple-600 text-3xl mb-4">
+						<i class="fas fa-bullseye"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Fielding Positions</h3>
+					<ul class="text-gray-600 space-y-2">
+						<li>• <strong>One bowler</strong> - bowls to batters</li>
+						<li>• <strong>One backstop</strong> - behind batter</li>
+						<li>
+							• <strong>Rest of team</strong> - on field or covering bases
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+					<div class="text-purple-600 text-3xl mb-4">
+						<i class="fas fa-trophy"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Scoring</h3>
+					<ul class="text-gray-600 space-y-2">
+						<li>• <strong>1 Rounder:</strong> Hit ball & reach 4th post</li>
+						<li>
+							• <strong>½ Rounder:</strong> Hit ball & reach 2nd or 3rd post
+							(stop there!)
+						</li>
+						<li>
+							• <strong>½ Rounder:</strong> Don't hit ball but reach 4th post
+						</li>
+						<li>
+							• <strong>½ Rounder:</strong> Bowler bowls 2 consecutive no-balls
+						</li>
+						<li>• <strong>½ Rounder:</strong> Fielder obstructs batter</li>
+						<li>• ⚠️ Scores only count when you reach home safely!</li>
+					</ul>
+				</div>
+
+				<div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+					<div class="text-purple-600 text-3xl mb-4">
+						<i class="fas fa-running"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Running Rules</h3>
+					<ul class="text-gray-600 space-y-2">
+						<li>
+							• <strong>If you hit the ball</strong> - you MUST run (even on
+							no-ball)
+						</li>
+						<li>
+							• <strong>If you don't hit on no-ball</strong> - you don't have to
+							run
+						</li>
+						<li>
+							• <strong>If you don't hit good ball</strong> - you MUST run
+						</li>
+						<li>• Keep contact with post (hand, bat, or foot)</li>
+						<li>• Can run when ball leaves bowler's hand</li>
+						<li>
+							• If bowler has ball in square, can't leave post (but can finish
+							run to next post)
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+					<div class="text-purple-600 text-3xl mb-4">
+						<i class="fas fa-baseball-ball"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Batting Rules</h3>
+					<ul class="text-gray-600 space-y-2">
+						<li>• Can bat one-handed or two-handed</li>
+						<li>• Wait in batting order away from 4th post</li>
+						<li>• Must run outside the batting square</li>
+						<li>• Can hit backwards and still score</li>
+						<li>
+							• If hit backwards, wait at 1st post until ball leaves backward
+							area
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+					<div class="text-purple-600 text-3xl mb-4">
+						<i class="fas fa-hand-paper"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Bowling Rules</h3>
+					<ul class="text-gray-600 space-y-2">
+						<li>• <strong>Must bowl underarm</strong> with smooth action</li>
+						<li>• Ball must reach batter between knee & head height</li>
+						<li>• Ball must not bounce before reaching batter</li>
+						<li>• Ball must not be wide or straight at body</li>
+						<li>• Bowler's foot must stay in square during bowl</li>
+						<li>• Two consecutive no-balls = ½ rounder to batting team</li>
+					</ul>
+				</div>
+
+				<div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+					<div class="text-purple-600 text-3xl mb-4">
+						<i class="fas fa-times-circle"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Ways to Get Out</h3>
+					<ul class="text-gray-600 space-y-2">
+						<li>• Ball caught before bouncing</li>
+						<li>• Post you're running to is stumped</li>
+						<li>• Lose contact with post when bowler has ball in square</li>
+						<li>• Run inside batting square</li>
+						<li>• Overtake another runner (you run them out!)</li>
+						<li>• Two batters at same post (first one there is out)</li>
+						<li>• ⚠️ If out, lose any points from that run!</li>
+					</ul>
+				</div>
+
+				<div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+					<div class="text-purple-600 text-3xl mb-4">
+						<i class="fas fa-flag-checkered"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Winning the Game</h3>
+					<ul class="text-gray-600 space-y-2">
+						<li>• Team with most rounders after 2 innings wins</li>
+						<li>• Innings ends when agreed format is met</li>
+						<li>• If all batters out with no one left to bat, innings ends</li>
+					</ul>
+				</div>
+
+				<div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+					<div class="text-purple-600 text-3xl mb-4">
+						<i class="fas fa-exchange-alt"></i>
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Multiple Runners</h3>
+					<ul class="text-gray-600 space-y-2">
+						<li>• Can stay at posts between batters</li>
+						<li>• Can run when next ball leaves bowler's hand</li>
+						<li>• Can get out while waiting between posts</li>
+						<li>• Continue until you reach home or get out</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Detailed Rules -->
+			<div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+				<h3 class="text-2xl font-bold mb-6 text-gray-800">
+					Detailed Playing Rules
+				</h3>
+
+				<div class="space-y-6">
+					<div>
+						<h4 class="text-lg font-semibold mb-2 text-purple-600">
+							<i class="fas fa-map-marked-alt mr-2"></i>The Pitch
+						</h4>
+						<p class="text-gray-600">
+							The pitch has four posts acting as bases arranged in a diamond.
+							After batting, your aim is to run around all four posts to score.
+							The batting square is where you stand to hit the ball. The
+							backward area is the zone behind the batting square.
+						</p>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold mb-2 text-purple-600">
+							<i class="fas fa-star mr-2"></i>How to Score
+						</h4>
+						<p class="text-gray-600 mb-2">
+							<strong>1 Rounder:</strong> Hit the ball and reach 4th post (home)
+							before the next ball is bowled.
+						</p>
+						<p class="text-gray-600 mb-2">
+							<strong>½ Rounder:</strong> Hit the ball and reach 2nd or 3rd post
+							(stop there and wait). Don't continue running or you might get out
+							and lose the ½ rounder!
+						</p>
+						<p class="text-gray-600 mb-2">
+							<strong>½ Rounder:</strong> Miss the ball but still reach 4th
+							post.
+						</p>
+						<p class="text-gray-600 mb-2">
+							<strong>Important:</strong> Your score only counts when you reach
+							home safely and join the batting queue. If you get out during your
+							run, you lose all points from that turn.
+						</p>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold mb-2 text-purple-600">
+							<i class="fas fa-question-circle mr-2"></i>When Must You Run?
+						</h4>
+						<p class="text-gray-600 mb-2">
+							<strong>If you hit the ball:</strong> You MUST run, no matter what
+							(even if it's a no-ball).
+						</p>
+						<p class="text-gray-600 mb-2">
+							<strong>If you miss a good ball:</strong> You MUST run.
+						</p>
+						<p class="text-gray-600 mb-2">
+							<strong>If you miss a no-ball:</strong> You DON'T have to run (but
+							you can if you want, and you can still score).
+						</p>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold mb-2 text-purple-600">
+							<i class="fas fa-ban mr-2"></i>No-Balls
+						</h4>
+						<p class="text-gray-600 mb-2">A no-ball is called when:</p>
+						<ul class="text-gray-600 list-disc list-inside space-y-1 ml-4">
+							<li>Ball is above head or below knee height</li>
+							<li>Ball bounces before reaching batter</li>
+							<li>Ball is too wide or aimed at body</li>
+							<li>Bowler's bowling action isn't smooth underarm</li>
+							<li>Bowler's foot is outside the square during bowling</li>
+						</ul>
+						<p class="text-gray-600 mt-2">
+							<strong>Penalty:</strong> Two consecutive no-balls to the same
+							batter = ½ rounder for batting team.
+						</p>
+						<p class="text-gray-600 mt-2">
+							<strong>Batter's options:</strong> Can choose to run on a no-ball
+							and score normally, or not run. If you hit the ball, you must run
+							regardless.
+						</p>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold mb-2 text-purple-600">
+							<i class="fas fa-undo-alt mr-2"></i>Backwards Area Rules
+						</h4>
+						<p class="text-gray-600">
+							Batters can still score if they hit the ball backwards (behind the
+							batting square). However, they must wait at 1st post until the
+							ball is thrown back into the forward playing area. Once the ball
+							leaves the backward area, they can continue running and score as
+							normal.
+						</p>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold mb-2 text-purple-600">
+							<i class="fas fa-hand-rock mr-2"></i>Post Contact Rules
+						</h4>
+						<p class="text-gray-600">
+							When waiting at a post, you must maintain contact with your hand,
+							bat, or foot. If you're not touching the post, the fielding team
+							can stump the next post to get you out. When the bowler has the
+							ball in the bowling square, you cannot leave your post (but if
+							you're already running between posts, you can complete your run to
+							the next post).
+						</p>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold mb-2 text-purple-600">
+							<i class="fas fa-users-slash mr-2"></i>Multiple Runners &
+							Overtaking
+						</h4>
+						<p class="text-gray-600 mb-2">
+							Batters from previous turns can wait at posts and continue running
+							when the next ball is bowled (or when the ball leaves the bowler's
+							hand).
+						</p>
+						<p class="text-gray-600 mb-2">
+							<strong>Important rule:</strong> You cannot have two batters at
+							the same post. If two batters end up at the same post, the first
+							one there is out.
+						</p>
+						<p class="text-gray-600">
+							<strong>Overtaking:</strong> If you overtake another runner from
+							your team, the person you overtook is out (you've run them out!).
+						</p>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold mb-2 text-purple-600">
+							<i class="fas fa-shield-alt mr-2"></i>Obstruction
+						</h4>
+						<p class="text-gray-600">
+							If a fielder obstructs a batter (blocks their path when they have
+							right of way on the track), the batting team is awarded ½ rounder
+							as a penalty.
+						</p>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold mb-2 text-purple-600">
+							<i class="fas fa-hourglass-end mr-2"></i>End of Innings
+						</h4>
+						<p class="text-gray-600">
+							An innings ends based on the format you agreed before the match:
+						</p>
+						<ul class="text-gray-600 list-disc list-inside space-y-1 ml-4">
+							<li><strong>All batters bat once</strong> (shortest game)</li>
+							<li><strong>27 good balls</strong> bowled</li>
+							<li><strong>3 outs</strong> recorded</li>
+							<li>
+								<strong>Whole team out</strong> (longest game) - when all
+								batters are out and no one is left to bat
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Interactive Section -->
+		<section id="interactive" class="bg-gray-100 py-12 hidden">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-8 text-gray-800">
+					Interactive Tools
+				</h2>
+
+				<div class="grid md:grid-cols-2 gap-8">
+					<!-- Am I Out? Tool -->
+					<div class="bg-white rounded-xl shadow-lg p-8">
+						<h3 class="text-2xl font-bold mb-6 text-purple-600">
+							<i class="fas fa-question-circle mr-2"></i>Am I Out?
+						</h3>
+						<div id="outTool">
+							<div class="mb-4">
+								<label class="block text-gray-700 mb-2 font-medium"
+									>What happened during play?</label
+								>
+								<select
+									id="outScenario"
+									class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+									onchange="checkOut()"
+								>
+									<option value="">Select a scenario...</option>
+									<option value="caught">
+										Ball caught before touching ground
+									</option>
+									<option value="stumped">
+										Fielder stumped the post I'm running to
+									</option>
+									<option value="nocontact">
+										Lost contact with post when bowler had ball in square
+									</option>
+									<option value="square">
+										I ran inside the batting square
+									</option>
+									<option value="overtake">
+										I overtook another runner on my team
+									</option>
+									<option value="twoatpost">
+										Two of us at the same post (I got there first)
+									</option>
+									<option value="missedball">
+										I missed the ball but reached 4th post
+									</option>
+								</select>
+							</div>
+							<div id="outResult" class="hidden p-4 rounded-lg"></div>
+						</div>
+					</div>
+
+					<!-- Am I Allowed To... Tool -->
+					<div class="bg-white rounded-xl shadow-lg p-8">
+						<h3 class="text-2xl font-bold mb-6 text-purple-600">
+							<i class="fas fa-check-circle mr-2"></i>Am I Allowed To...?
+						</h3>
+						<div id="allowedTool">
+							<div class="mb-4">
+								<label class="block text-gray-700 mb-2 font-medium"
+									>What do you want to do?</label
+								>
+								<select
+									id="allowedAction"
+									class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+									onchange="checkAllowed()"
+								>
+									<option value="">Select an action...</option>
+									<option value="underarm">Bowl underarm</option>
+									<option value="backward">Hit the ball backwards</option>
+									<option value="waitatpost">
+										Wait at a post between batters
+									</option>
+									<option value="noballrun">
+										Run on a no-ball (didn't hit it)
+									</option>
+									<option value="noballhitrun">
+										Run on a no-ball (did hit it)
+									</option>
+									<option value="notrun">Not run when I missed the ball</option>
+									<option value="scoreafter2nd">
+										Stop at 2nd post and score ½ rounder
+									</option>
+									<option value="footcontact">
+										Use my foot to stay in contact with post
+									</option>
+									<option value="runwhilebowlerhas">
+										Leave post while bowler has ball in square
+									</option>
+								</select>
+							</div>
+							<div id="allowedResult" class="hidden p-4 rounded-lg"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Decision Tree Visual -->
+				<div class="bg-white rounded-xl shadow-lg p-8 mt-8">
+					<h3 class="text-2xl font-bold mb-6 text-purple-600">
+						<i class="fas fa-map-signs mr-2"></i>Quick Decision Guide
+					</h3>
+					<div class="grid md:grid-cols-3 gap-4">
+						<div class="bg-green-50 p-4 rounded-lg border-2 border-green-300">
+							<h4 class="font-semibold text-green-800 mb-3 text-lg">
+								✓ You're Safe / Allowed
+							</h4>
+							<ul class="text-sm text-green-700 space-y-2">
+								<li>✓ Bowl underarm with smooth action</li>
+								<li>✓ Hit ball backwards (wait at 1st)</li>
+								<li>✓ Run on no-ball and score</li>
+								<li>✓ Wait at post between batters</li>
+								<li>✓ Use foot to touch post</li>
+								<li>✓ Stop at 2nd/3rd for ½ rounder</li>
+								<li>✓ Miss ball but reach 4th = ½ rounder</li>
+							</ul>
+						</div>
+						<div class="bg-yellow-50 p-4 rounded-lg border-2 border-yellow-300">
+							<h4 class="font-semibold text-yellow-800 mb-3 text-lg">
+								⚠ Must Know Rules
+							</h4>
+							<ul class="text-sm text-yellow-700 space-y-2">
+								<li>⚠ Hit ball = MUST run (even no-ball)</li>
+								<li>⚠ Miss good ball = MUST run</li>
+								<li>⚠ Miss no-ball = DON'T have to run</li>
+								<li>⚠ Score only counts when home safe</li>
+								<li>⚠ 2 no-balls in row = ½ rounder</li>
+								<li>⚠ Fielder obstructs = ½ rounder</li>
+								<li>⚠ Can't leave post when bowler has ball</li>
+							</ul>
+						</div>
+						<div class="bg-red-50 p-4 rounded-lg border-2 border-red-300">
+							<h4 class="font-semibold text-red-800 mb-3 text-lg">
+								✗ You're Out!
+							</h4>
+							<ul class="text-sm text-red-700 space-y-2">
+								<li>✗ Ball caught before bounce</li>
+								<li>✗ Post stumped ahead of you</li>
+								<li>✗ Not touching post (bowler has ball)</li>
+								<li>✗ Run inside batting square</li>
+								<li>✗ Overtake teammate</li>
+								<li>✗ Two at same post (1st there is out)</li>
+								<li>✗ If out, lose that turn's points!</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Scoring Examples -->
+				<div class="bg-white rounded-xl shadow-lg p-8 mt-8">
+					<h3 class="text-2xl font-bold mb-6 text-purple-600">
+						<i class="fas fa-lightbulb mr-2"></i>Scoring Examples
+					</h3>
+					<div class="grid md:grid-cols-2 gap-4">
+						<div class="bg-purple-50 p-4 rounded-lg border-2 border-purple-200">
+							<h4 class="font-semibold text-purple-800 mb-2">
+								✓ Score 1 Rounder
+							</h4>
+							<p class="text-sm text-purple-700">
+								You hit the ball and run all the way to 4th post (home) before
+								the next ball is bowled. You score 1 rounder!
+							</p>
+						</div>
+						<div class="bg-purple-50 p-4 rounded-lg border-2 border-purple-200">
+							<h4 class="font-semibold text-purple-800 mb-2">
+								✓ Score ½ Rounder (Option 1)
+							</h4>
+							<p class="text-sm text-purple-700">
+								You hit the ball and reach 2nd post. You STOP there. You score ½
+								rounder. Next batter comes up, you run when ball leaves bowler's
+								hand.
+							</p>
+						</div>
+						<div class="bg-purple-50 p-4 rounded-lg border-2 border-purple-200">
+							<h4 class="font-semibold text-purple-800 mb-2">
+								✓ Score ½ Rounder (Option 2)
+							</h4>
+							<p class="text-sm text-purple-700">
+								You miss the ball but manage to run all the way to 4th post
+								without getting out. You score ½ rounder!
+							</p>
+						</div>
+						<div class="bg-red-50 p-4 rounded-lg border-2 border-red-200">
+							<h4 class="font-semibold text-red-800 mb-2">✗ Score Nothing</h4>
+							<p class="text-sm text-red-700">
+								You hit the ball and reach 2nd post (½ rounder). But you try to
+								continue to 3rd and get stumped out. You lose all points from
+								that turn!
+							</p>
+							<p class="text-sm text-red-700">
+								Or, you only make it to 1st post, and then manage to get back
+								home without being stumped out. You score nothing!
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Quiz Section -->
+		<section id="quiz" class="container mx-auto py-12 px-4 hidden">
+			<h2 class="text-4xl font-bold text-center mb-8 text-gray-800">
+				Test Your Knowledge
+			</h2>
+
+			<div class="max-w-3xl mx-auto">
+				<div class="bg-white rounded-xl shadow-lg p-8">
+					<div id="quizHeader">
+						<div class="flex justify-between items-center mb-6">
+							<h3 class="text-xl font-semibold">Rounders Rules Quiz</h3>
+							<div class="flex items-center space-x-4">
+								<span class="text-gray-600"
+									>Question <span id="currentQuestion">1</span> of
+									<span id="totalQuestions">10</span></span
+								>
+								<span
+									class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-semibold"
+									>Score: <span id="score">0</span></span
+								>
+							</div>
+						</div>
+						<div class="w-full bg-gray-200 rounded-full h-2 mb-6">
+							<div
+								id="progressBar"
+								class="bg-purple-600 h-2 rounded-full transition-all duration-300"
+								style="width: 10%"
+							></div>
+						</div>
+					</div>
+
+					<div id="quizContent">
+						<div id="questionContainer">
+							<h4 id="questionText" class="text-lg font-medium mb-4"></h4>
+							<div id="optionsContainer" class="space-y-3"></div>
+						</div>
+					</div>
+
+					<div id="quizResult" class="hidden text-center">
+						<div class="mb-6">
+							<i class="fas fa-trophy text-6xl text-yellow-400 mb-4"></i>
+							<h3 class="text-2xl font-bold mb-2">Quiz Complete!</h3>
+							<p class="text-gray-600 mb-4">
+								Your final score:
+								<span id="finalScore" class="font-bold text-purple-600"></span>
+							</p>
+							<div id="resultMessage" class="text-lg mb-6"></div>
+						</div>
+						<button
+							onclick="restartQuiz()"
+							class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition transform hover:scale-105"
+						>
+							<i class="fas fa-redo mr-2"></i>Restart Quiz
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="gradient-bg text-white py-8 mt-12">
+			<div class="container mx-auto text-center">
+				<p class="mb-2">
+					© 2026 Rounders Guide - Your Complete Learning Resource
+				</p>
+				<p class="text-sm opacity-75">
+					Made with ❤️ for Rounders enthusiasts everywhere
+				</p>
+			</div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
